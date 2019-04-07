@@ -3,18 +3,23 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments
   def index
-    @appointments = Appointment.all
+    @therapist = Therapist.find(params[:therapist_id])
+    @appointments = Appointment.where(therapist_id: @therapist.id)
 
     render json: @appointments
   end
 
   # GET /appointments/1
   def show
+    @therapist = Therapist.find(params[:therapist_id])
+    @appointments = Appointment.find(params[:id])
+
     render json: @appointment
   end
 
   # POST /appointments
   def create
+    @therapist = Therapist.find(params[:user_id])
     @appointment = Appointment.new(appointment_params)
 
     if @appointment.save

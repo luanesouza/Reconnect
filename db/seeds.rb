@@ -46,7 +46,7 @@ users = User.create([
    user_email: 'darwin@gmail.com',
    user_password_digest: 'aaaaaa'}])
 
-consult = Appointment.create({user_id: 1, therapist_id: 2})
-consult1 = Appointment.create({user_id: 2, therapist_id: 1})
-consult2 = Appointment.create({user_id: 3, therapist_id: 2})
-consult3 = Appointment.create({user_id: 4, therapist_id: 1})
+consult = Appointment.create({user_id: 4, therapist_id: 2})
+consult1 = Appointment.create({user_id: 3, therapist_id: 1})
+consult2 = Appointment.create({user_id: 2, therapist_id: 2})
+consult3 = Appointment.create({user_id: 1, therapist_id: 1})
