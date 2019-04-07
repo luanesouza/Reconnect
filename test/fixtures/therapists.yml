@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  therapist_first_name: MyString
+  therapist_last_name: MyString
+  therapist_email: MyString
+  therapist_password_digest: MyString
+  specialty: MyString
+  location: MyString
+  therapist_skype: MyString
+  price: MyString
+
+two:
+  therapist_first_name: MyString
+  therapist_last_name: MyString
+  therapist_email: MyString
+  therapist_password_digest: MyString
+  specialty: MyString
+  location: MyString
+  therapist_skype: MyString
+  price: MyString
