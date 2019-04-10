@@ -1,0 +1,395 @@
+* {
+  margin: 0;
+
+}
+
+.App {
+font-family: 'Barlow', sans-serif;
+  background-color: #FDFDFF;
+  color: #253031;
+  height: 100vh;
+}
+
+button{
+  cursor: pointer!important;
+}
+
+.text{
+  font-family: 'Antic Didone', serif;
+  font-family: 'Barlow', sans-serif;
+  background-color: rgba(152,223,175, .3);
+}
+
+
+/* REGISTER FORM & WELCOME PAGE*/
+.RegisterForm{
+  padding-top: 2em;
+  position: absolute;
+  right: 10em;
+  text-align: center;
+  border: .3em solid rgba(152,223,175, .4);
+  border-radius: 1em;
+  background-color: rgb(245,245,245);
+  background-repeat: no-repeat;
+  width: 35em;
+  height: 36em;
+  box-shadow: 5px 9px #888888;
+  animation-name: registerform;
+  animation-duration: 1.5s;
+  /* animation-iteration-count: infinite; */
+}
+
+@keyframes registerform {
+  0% { right: -10em; opacity: 0;}
+    100% { right: 10em; opacity: 1;}
+}
+
+.hero-img{
+  background-image: url("https://previews.123rf.com/images/juliatochilina/juliatochilina1802/juliatochilina180200002/96060228-winter-forest-in-a-fog-painted-in-watercolor-isolated-on-white-background-.jpg");
+  min-height: 50em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.shade-over-hero-img{
+  padding: 4em 4em;
+  min-height: 50em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-color: rgba(255,255,255, .1)
+}
+
+.register-h1{
+  font-size: 1.4em;
+  padding-top: 2em;
+  margin: 1em;
+}
+
+.register-input{
+  width: 26em;
+  height: 3em;
+  padding: 1em;
+  margin: .5%;
+  font-family: 'Barlow', sans-serif;
+  font-weight: bold;
+  border-radius: 0.7em;
+  border-color: #98DFAF;
+}
+
+.welcome-p{
+  font-size: 1em;
+  font-weight: bolder;
+  position: absolute;
+  float: left;
+  text-align: justify;
+  padding: 2em;
+}
+
+.Header{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo{
+  width: 3em;
+  height: 3em;
+}
+
+.reconnectTitle{
+  font-size: 1em;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bolder;
+  margin: 0;
+}
+
+.register-button{
+  margin: 1.5em;
+  height: 3em;
+  width: 9em;
+  border-radius: 1em;
+  font-family: 'Barlow', sans-serif;
+  font-size: .7em;
+  border-color: #98DFAF;
+  background-color: rgba(152,223,175, .3);
+  box-shadow: 2px 3px #888888;
+  background-color: rgba(152,223,175, .3);
+}
+
+.already-have-account{
+  color: grey;
+  font-size: 1.2em;
+  border: none;
+  background: none;
+  font-weight: 600;
+  font-family: 'Barlow', sans-serif;
+}
+
+/* LOGIN FORM */
+
+.LoginForm {
+ text-align: center;
+ padding-top: 5em;
+ background-color: rgb(245,245,245);
+ margin-top: 10em;
+ margin-left: 40em;
+ width: 40em;
+ height: 30em;
+ border: .2em solid #34623F;
+ box-shadow: 5px 9px #888888;
+}
+
+.login-input{
+  margin-top: 3em;
+  padding: 3em;
+  width: 18em;
+  height: .1em;
+  border-radius: 2em;
+  background-color: rgba(152,223,175, .3);
+}
+
+.create-new-account{
+  padding-top: 3.5em;
+  padding-bottom: 1em;
+}
+
+.closeModal{
+  font-size: 2.5em;
+  background: none;
+  border: none;
+  padding-right: .6em;
+  top: -1em;
+  float: right;
+  top: 0;
+  margin: 0;
+  color: #FDFDFF;
+}
+
+.login-button{
+  margin: 1.5em;
+  height: 3em;
+  width: 9em;
+  border-radius: 1em;
+  font-family: 'Barlow', sans-serif;
+  font-size: .7em;
+  border-color: #98DFAF;
+  box-shadow: 2px 3px #888888;
+  background-color: rgba(152,223,175, .3);
+}
+
+button:active {
+  background: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+   outline: none;
+}
+
+
+.modal{
+  animation-name: modal;
+  animation-duration: 1s;
+  width: 100vw;
+  height: 90vh;
+  background-color: rgba(253,253,255, .8);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes modal {
+  0%{ opacity: 0}
+  100%{ opacity: 1}
+}
+
+
+/* CONSULT LIST */
+
+.therapistImg{
+  width: 10em;
+  height: 15em;
+}
+
+.consultList{
+  display: flex;
+  background-color: rgba(152,223,175, .5);
+  border: .1em solid #34623F;
+  justify-content: flex-start;
+  height: 25em;
+  text-align: center;
+  overflow: auto;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.Appointment{
+  padding-top: 7em;
+  background-attachment: fixed;
+}
+
+.you-have-appointments{
+  font-size: 2em;
+}
+
+#app-info{
+  text-align: justify;
+  padding: .1em;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+span{
+  color: #34623F;
+}
+
+.eachConsult{
+  background-color: rgba(253,253,255, .5);
+  border-radius: 1em;
+  width: 18em;
+  height: 20em;
+  padding: 1em;
+  margin: 1em;
+  border: 2px solid white;
+}
+
+#arrow{
+  padding-top: 3.5em;
+  font-size: 3em;
+  color: rgba(52,98,63, .5);
+  font-weight: 600;
+}
+.arrow{
+  width: 5em;
+  height: 25em;
+  margin-left: 4em;
+  right: 0;
+  background-color: rgba(255,255,255, 1);
+}
+
+.cancel-app-button{
+  height: 2em;
+  border: 2px solid white;
+  border-radius: 1em;
+  font-family: 'Barlow', sans-serif;
+  font-size: .7em;
+  /* border-color: #98DFAF; */
+  font-weight: 600;
+  background-color: rgba(241, 169, 160, 1);
+  box-shadow: 1px 2px #888888;
+}
+
+.reschedule-app-button{
+  height: 2em;
+  border: 2px solid white;
+  border-radius: 1em;
+  font-family: 'Barlow', sans-serif;
+  font-size: .7em;
+  /* border-color: #98DFAF; */
+  font-weight: 600;
+  background-color: rgba(200, 247, 197, 1);
+  box-shadow: 1px 2px #888888;
+}
+
+/* THERAPIST LIST */
+
+.therapistList{
+  background-color: rgba(152,223,175, .5);
+}
+
+.therapistInfo{
+  display: flex;
+  margin: 3em;
+  border: .2em solid rgb(240,255,240);
+  background-color: #FDFDFF;
+  box-shadow: 5px 5px #888888;
+}
+
+.therapist-img{
+  border: .2em solid rgb(240,255,240);
+  width: 9em;
+  height:12em;
+  margin: 1em;
+}
+
+.therapist-list-info{
+  font-size: 2em;
+  font-weight: 400;
+  font-family: 'Barlow', sans-serif;
+}
+
+.more-about-professional{
+  width: 20em;
+  height: 3em;
+  margin-top: 6em;
+  border-radius: 1em;
+  font-family: 'Barlow', sans-serif;
+  font-size: .8em;
+  font-weight: 600;
+  border-color: #98DFAF;
+  background-color: rgba(245,245,245, .6);
+  box-shadow: 2px 3px #888888;
+}
+
+.name-location-specialty{
+  padding: 1em;
+}
+
+/* THERAPIST PROFILE */
+
+.TherapistProfile{
+  padding: 2em;
+}
+
+.therapistImage{
+  width: auto;
+  height: 20em;
+  padding: 1em;
+  border-radius: 2.5em;
+}
+
+.therapist-name{
+  font-size: 2em;
+  padding-top: 2em;
+}
+
+.verified{
+  width: .8em;
+}
+
+#therapist-info{
+  font-size: 2em;
+  padding: 0 0 1em 0;
+
+}
+
+#title-therapist{
+  font-size: 2.2em;
+  color: #34623F;
+  font-weight: bold;
+}
+
+.top-therapist-profile{
+  background-color: red;
+  display: flex;
+}
+
+.star{
+  margin-top: .4em;
+  padding:0;
+  width: 1em;
+}
+
+.modalAppointment{
+  padding-left: 16em;
+  padding-top: 3em;
+}

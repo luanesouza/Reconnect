@@ -9,6 +9,8 @@ class CreateTherapists < ActiveRecord::Migration[5.2]
       t.string :location
       t.string :therapist_skype
       t.string :price
+      t.string :therapist_image
+      t.text :bio
 
       t.timestamps
     end
