@@ -51,6 +51,7 @@ class TherapistsController < ApplicationController
       :therapist_last_name,
       :therapist_email,
       :therapist_password_digest,
+      :therapist_image,
       :specialty,
       :location,
       :therapist_skype,

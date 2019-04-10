@@ -38,7 +38,7 @@ class AppointmentsController < ApplicationController
       @appointment = Appointment.new(appointment_params)
 
       if @appointment.save
-        render json: @appointment, status: :created, location: @appointment
+        render json: @appointment, status: :created
       else
         render json: @appointment.errors, status: :unprocessable_entity
       end
@@ -82,9 +82,9 @@ class AppointmentsController < ApplicationController
       @therapist = Therapist.find(params[:therapist_id])
       @appointment.destroy
       redirect_to therapist_appointments_path(@therapist)
-    else
-      @appointment.find(params[:id])
+    else params[:user_id]
       @user = User.find(params[:user_id])
+      @appointment = Appointment.find(params[:id])
       @appointment.destroy
       redirect_to user_appointments_path(@user)
     end
@@ -98,6 +98,6 @@ class AppointmentsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def appointment_params
-      params.require(:post).permit(:date, :time, :user_id, :therapist_id)
+      params.require(:appointment).permit(:date, :time, :therapist_first_name, :therapist_last_name, :therapist_image, :user_id, :therapist_id)
     end
 end

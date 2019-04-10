@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(version: 2019_04_06_230603) do
   create_table "appointments", force: :cascade do |t|
     t.string "date"
     t.string "time"
+    t.string "therapist_image"
+    t.string "therapist_first_name"
+    t.string "therapist_last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
@@ -33,6 +36,8 @@ ActiveRecord::Schema.define(version: 2019_04_06_230603) do
     t.string "location"
     t.string "therapist_skype"
     t.string "price"
+    t.string "therapist_image"
+    t.text "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
