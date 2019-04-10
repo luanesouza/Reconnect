@@ -194,7 +194,14 @@ class App extends Component {
     this.props.history.push('/profile')
     const appointments = await getUserAppointments();
     this.setState({
-      appointments
+      appointments,
+      modalAppointment: false,
+      date: '',
+      time: '',
+      therapist_id:'',
+      therapist_image: '',
+      therapist_first_name: '',
+      therapist_last_name: '',
     })
   }
 
