@@ -33,6 +33,8 @@ class App extends Component {
       therapist_image: '',
       therapist_last_name: '',
       therapist_first_name: '',
+      education: '',
+      specialty: '',
       user_id: 1,
       user_first_name: '',
       user_last_name: '',
@@ -165,6 +167,8 @@ class App extends Component {
       therapist_image: therapist.therapist_image,
       therapist_first_name: therapist.therapist_first_name,
       therapist_last_name: therapist.therapist_last_name,
+      specialty: therapist.specialty,
+      education: therapist.education
     })
     this.props.history.push('/therapist');
   }

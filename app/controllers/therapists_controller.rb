@@ -53,6 +53,7 @@ class TherapistsController < ApplicationController
       :therapist_password_digest,
       :therapist_image,
       :specialty,
+      :education,
       :location,
       :therapist_skype,
       :price)

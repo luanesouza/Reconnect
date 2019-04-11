@@ -92,7 +92,7 @@ button{
 
 .Header{
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-around;
   border: 1px solid rgba(152,223,175, .8);
   padding-bottom: 1em;
@@ -379,6 +379,14 @@ span{
   background-color: rgba(152,223,175, .5);
 }
 
+.redirect-to-therapists{
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  color: #34623F;
+  font-weight: 500;
+}
+
 .therapistInfo{
   display: flex;
   margin: 3em;
@@ -389,8 +397,8 @@ span{
 
 .therapist-img{
   border: .2em solid rgb(240,255,240);
-  width: 13em;
-  height:12em;
+  width: 14em;
+  height:20em;
   margin: 1em;
 }
 

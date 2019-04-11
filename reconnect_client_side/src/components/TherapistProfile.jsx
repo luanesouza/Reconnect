@@ -68,7 +68,7 @@ function TherapistProfile(props){
         </div>
 
         <div>
-          <p id="therapist-info"></p>
+          <p id="therapist-info">{therapist.education}</p>
         </div>
       </div>
     </div>
