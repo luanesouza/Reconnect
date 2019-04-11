@@ -40,13 +40,13 @@ button{
 }
 
 @keyframes registerform {
-  0% { right: -10em; opacity: 0;}
+  0% { right: -15em; opacity: 0;}
     100% { right: 10em; opacity: 1;}
 }
 
 .hero-img{
   background-image: url("https://previews.123rf.com/images/juliatochilina/juliatochilina1802/juliatochilina180200002/96060228-winter-forest-in-a-fog-painted-in-watercolor-isolated-on-white-background-.jpg");
-  min-height: 50em;
+  min-height: 45em;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -55,7 +55,7 @@ button{
 
 .shade-over-hero-img{
   padding: 4em 4em;
-  min-height: 50em;
+  min-height: 45em;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -81,7 +81,7 @@ button{
 }
 
 .welcome-p{
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bolder;
   position: absolute;
   float: left;
@@ -181,9 +181,10 @@ a {
   padding-right: .6em;
   top: -1em;
   float: right;
+  padding: .5em;
   top: 0;
   margin: 0;
-  color: #FDFDFF;
+  color: #466365;
 }
 
 .login-button{

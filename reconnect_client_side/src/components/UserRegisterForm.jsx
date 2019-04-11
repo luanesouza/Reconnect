@@ -15,7 +15,7 @@ const RegisterForm = (props) => {
           <br/>
           Not choices that are just healthy for your body, <br/>but healthy for your mind.
           <br/>
-          Join Reconnect. <br/>
+          Join <span> Reconnect.</span> <br/>
           An easy way to reconnect with yourself <br/> by connecting with someone who understands you.
           <br/>
           You may have to fight a battle more than once,
