@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 import UserHeader from './UserProfileComponents/UserHeader';
 import { Link } from 'react-router-dom';
 import AppointmentForm from './AppointmentForm';
-
+import ContactMe from './ContactMe';
 function TherapistProfile(props){
 
   const { therapist, getInfoAppointment } = props
@@ -26,7 +26,10 @@ function TherapistProfile(props){
           <p id="therapist-info">Skype: {therapist.therapist_skype}</p>
           <p id="title-therapist">Price:</p>
           <p id="therapist-info">{therapist.price}</p>
-          <button onClick={(props) => getInfoAppointment()}> Schedule an Appointment </button>
+          <button className="schedule-btt-therapist-profile" onClick={(props) => getInfoAppointment()}> Schedule an Appointment </button>
+        </div>
+        <div id="contactme">
+          <ContactMe />
         </div>
         <div className="modalAppointment">
           <AppointmentForm
@@ -38,12 +41,36 @@ function TherapistProfile(props){
           modalAppointment={props.modalAppointment}
           />
         </div>
-      </div>
-      <p id="title-therapist">Bio:</p>
-      <p id="therapist-info">{therapist.bio}</p>
-      <p id="title-therapist">Specialty:</p>
-      <p id="therapist-info">{therapist.specialty}</p>
 
+      </div>
+      <div className="bottom-therapist-profile">
+        <div className="icon-text">
+          <img className="icon-therapist-profile" src="https://cdn0.iconfinder.com/data/icons/user-collection-4/512/user-512.png" id="bio-icon" alt="bio-icon"/>
+          <p id="title-therapist">Bio:</p>
+        </div>
+
+        <div>
+          <p id="therapist-info">{therapist.bio}</p>
+        </div>
+
+        <div className="icon-text">
+          <img className="icon-therapist-profile" src="https://whatsyouredge.com.au/wp-content/uploads/2017/03/SPECIALTY-PROGRAMS-icon.png" id="specialty-icon" alt="specialty-icon" />
+          <p id="title-therapist">Specialty:</p>
+        </div>
+
+        <div>
+          <p id="therapist-info">{therapist.specialty}</p>
+        </div>
+
+        <div className="icon-text">
+          <img className="icon-therapist-profile" src="http://ncjustice.info/wp-content/uploads/2018/12/NCJC-icons-EDUCATION.png" id="" alt="edu-icon"/>
+          <p id="title-therapist">Education:</p>
+        </div>
+
+        <div>
+          <p id="therapist-info"></p>
+        </div>
+      </div>
     </div>
   )
 }

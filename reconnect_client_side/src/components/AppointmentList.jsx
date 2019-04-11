@@ -20,8 +20,9 @@ function AppointmentList(props){
         </div>
       )
       )}
-      <AppointmentForm handleChange={props.handleChange} handleCalendar={props.handleCalendar} handleSubmit={props.rescheduleAppointment} time={props.time} modalAppointment={props.modalAppointment}/>
-
+      <div className="calendar-form">
+        <AppointmentForm handleChange={props.handleChange} handleCalendar={props.handleCalendar} handleSubmit={props.rescheduleAppointment} time={props.time} modalAppointment={props.modalAppointment}/>
+      </div>
       </div>
 
 

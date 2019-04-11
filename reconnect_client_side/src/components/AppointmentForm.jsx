@@ -9,7 +9,7 @@ function AppointmentForm(props){
   return(
   <form onSubmit={props.handleSubmit}>
    <Calendar onChange={props.handleCalendar} value={props.date}/>
-     <div>
+     <div className="calendar-input">
         <input
         className="register-input"
         placeholder="TIME"
@@ -19,7 +19,7 @@ function AppointmentForm(props){
         name="time"
         value={props.time} />
       </div>
-     <button onClick={props.handleSubmit}> Schedule </button>
+     <button className="schedule-button" onClick={props.handleSubmit}> Schedule </button>
    </form>
  )
 }

@@ -87,6 +87,7 @@ button{
   float: left;
   text-align: justify;
   padding: 2em;
+  line-height: 1.4em;
 }
 
 .Header{
@@ -226,25 +227,77 @@ button:active {
 }
 
 
-/* CONSULT LIST */
+/* CONSULT LIST & User Profile*/
+
+.AppointmentList{
+}
+
+.AppointmentList{
+  background-color: rgba(180,236,180, .2);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  /* height: 100vh; */
+  width: 100vw;
+}
+
+.DiaryVideo{
+  padding-top: 2em;
+  margin: 3.3em;
+  width: 50em;
+  height: 30em;
+  background-color: rgba(180,236,180, .1);
+  border: .2em solid white;
+}
+
+.profile-icon{
+  height: 3em;
+  width: 3em;
+}
 
 .therapistImg{
-  width: 10em;
+  width: 16em;
   height: 15em;
+  border-radius: 1em;
+  margin-bottom: 1.5em;
 }
 
 .consultList{
   display: flex;
-  background-color: rgba(152,223,175, .5);
-  border: .1em solid #34623F;
+  background-color: rgba(253,253,255, .6);
+  border: .2em solid rgba(180, 236, 180, .4);
+  border-radius: .5em;
   justify-content: flex-start;
-  height: 25em;
+  height: 28em;
   text-align: center;
   overflow: auto;
   white-space: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
   padding-left: 2em;
+}
+
+.schedule-button{
+  margin: 1.5em;
+  height: 3em;
+  width: 9em;
+  border-radius: 1em;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: .7em;
+  border-color: #98DFAF;
+  background-color: rgba(152,223,175, .3);
+  box-shadow: 2px 3px #888888;
+  background-color: rgba(152,223,175, .3);
+}
+
+.calendar-input{
+  margin-top: 1em;
+}
+
+.calendar-form{
+  padding-top: 3.5em;
+  padding-left: 1em;
 }
 
 .Appointment{
@@ -261,7 +314,7 @@ button:active {
 
 #app-info{
   text-align: justify;
-  padding: .1em;
+  padding: .2em;
   font-size: 1.2em;
   font-weight: 600;
 }
@@ -274,8 +327,9 @@ span{
   background-color: rgba(253,253,255, .5);
   border-radius: 1em;
   width: 18em;
-  height: 20em;
+  height: 23em;
   padding: 1em;
+  padding-top: 2em;
   margin: 1em;
   border: 2px solid white;
 }
@@ -309,6 +363,7 @@ span{
 .reschedule-app-button{
   height: 2em;
   border: 2px solid white;
+  margin-top: 1.1em;
   border-radius: 1em;
   font-family: 'Barlow', sans-serif;
   font-size: .7em;
@@ -334,7 +389,7 @@ span{
 
 .therapist-img{
   border: .2em solid rgb(240,255,240);
-  width: 9em;
+  width: 13em;
   height:12em;
   margin: 1em;
 }
@@ -365,13 +420,14 @@ span{
 /* THERAPIST PROFILE */
 
 .TherapistProfile{
-  padding: 2em;
+  background-color: #FDFDFF;
 }
 
 .therapistImage{
   width: auto;
   height: 20em;
-  padding: 1em;
+  padding: 1.5em;
+  padding-top: 4.5em;
   border-radius: 2.5em;
 }
 
@@ -387,7 +443,7 @@ span{
 #therapist-info{
   font-size: 2em;
   padding: 0 0 1em 0;
-
+  text-align: justify;
 }
 
 #title-therapist{
@@ -397,8 +453,10 @@ span{
 }
 
 .top-therapist-profile{
-  background-color: red;
+  margin-top: 2em;
+  margin-bottom: 5em;
   display: flex;
+
 }
 
 .star{
@@ -408,6 +466,89 @@ span{
 }
 
 .modalAppointment{
-  padding-left: 16em;
-  padding-top: 3em;
+  padding-left: 3em;
+  padding-top: 5em;
+}
+
+.bottom-therapist-profile{
+  padding: 3em;
+}
+
+.icon-therapist-profile{
+  width: 2.5em;
+  height: 2.5em;
+  padding-right: 1em;
+}
+
+.icon-text{
+  display: flex;
+}
+
+.schedule-btt-therapist-profile{
+  margin: 1.5em;
+  height: 3em;
+  width: 15em;
+  border-radius: 1em;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: .7em;
+  border-color: #98DFAF;
+  background-color: rgba(152,223,175, .3);
+  box-shadow: 2px 3px #888888;
+  background-color: rgba(152,223,175, .3);
+}
+
+.form-contact-therapist{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-contact-me{
+  display: flex;
+  margin-top: 6em;
+  margin-left: 1em;
+}
+
+#input-form-contact-therapist{
+  padding: 1em;
+  margin: .6em;
+  width: 26em;
+  height: 3em;
+  padding: 1em;
+  margin: .5%;
+  font-family: 'Barlow', sans-serif;
+  font-weight: bold;
+  border-radius: 0.7em;
+  border-color: #98DFAF;
+}
+
+#textarea{
+  padding: 1em;
+  margin: .6em;
+  width: 16em;
+  height: 14.5em;
+  padding: 1em;
+  margin-left: 3em;
+  font-family: 'Barlow', sans-serif;
+  font-weight: bold;
+  border-radius: 0.7em;
+  border-color: #98DFAF;
+}
+
+#send{
+  margin: 1.5em;
+  height: 3em;
+  width: 15em;
+  border-radius: 1em;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: .7em;
+  border-color: #98DFAF;
+  background-color: rgba(152,223,175, .3);
+  box-shadow: 2px 3px #888888;
+  background-color: rgba(152,223,175, .3);
+}
+
+#contactme{
+
 }
