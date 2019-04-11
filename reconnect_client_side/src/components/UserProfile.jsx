@@ -9,7 +9,7 @@ import Diary from './UserProfileComponents/Diary';
 function UserProfile(props){
   return(
     <div>
-    <UserHeader />
+    <UserHeader handleRedirect={props.handleRedirect} />
       <div className="AppointmentList">
         <AppointmentList
         appointments={props.appointments}

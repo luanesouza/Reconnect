@@ -55,6 +55,7 @@ class App extends Component {
     this.cancelAppointment = this.cancelAppointment.bind(this);
     this.populateForm = this.populateForm.bind(this);
     this.handleCalendar = this.handleCalendar.bind(this);
+    this.handleRedirect = this.handleRedirect.bind(this);
   }
 
   toggleModal() {
@@ -259,6 +260,17 @@ class App extends Component {
   })
 }
 
+  handleRedirect(){
+    console.log('clicked');
+    this.setState({
+      time: '',
+      therapist_id: '',
+      date: '',
+      modalAppointment: false
+    })
+    this.props.history.push('/therapists')
+  }
+
   handleCalendar(date){
     this.setState(prevState => ({
         ...prevState,
@@ -323,7 +335,8 @@ class App extends Component {
             time={this.state.time}
             rescheduleAppointment={this.rescheduleAppointment}
             modalAppointment={this.state.modalAppointment}
-            handleChange={this.handleChange}/>
+            handleChange={this.handleChange}
+            handleRedirect={this.handleRedirect}/>
           </div>
         )}/>
         <Route exact path='/therapists' render={(props) => (
