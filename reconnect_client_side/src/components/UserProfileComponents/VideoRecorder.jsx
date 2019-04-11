@@ -3,10 +3,10 @@ import React from 'react';
 
 function VideoRecorder(){
   return(
-    <div>
-      <ziggeo ziggeo-limit={15}
-        ziggeo-width={320}
-        ziggeo-height={240}>
+    <div className="ziggeo">
+      <ziggeo ziggeo-limit={25}
+        ziggeo-width={700}
+        ziggeo-height={440}>
       </ziggeo>
     </div>
 )}

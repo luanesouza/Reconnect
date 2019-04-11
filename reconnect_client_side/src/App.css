@@ -242,12 +242,37 @@ button:active {
 }
 
 .DiaryVideo{
+  display: flex;
   padding-top: 2em;
   margin: 3.3em;
   width: 50em;
   height: 30em;
   background-color: rgba(180,236,180, .1);
   border: .2em solid white;
+}
+
+.ziggeo{
+  text-align: center!important;
+  padding-left: 2.5em;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.ziggeovideos{
+  padding: 1em;
+  margin-left: 15em;
+}
+
+#videos-h1{
+  padding-bottom: 1em;
+}
+
+ziggeoplayer{
+  padding: 1em;
+}
+
+.Videos{
+  display: flex;
 }
 
 .profile-icon{
@@ -560,3 +585,4 @@ span{
 #contactme{
 
 }
+/*  */

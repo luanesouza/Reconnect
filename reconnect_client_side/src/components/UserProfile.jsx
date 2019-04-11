@@ -5,6 +5,8 @@ import { withRouter } from 'react-router';
 import UserHeader from './UserProfileComponents/UserHeader';
 import AppointmentForm from './AppointmentForm';
 import Diary from './UserProfileComponents/Diary';
+import Videos from './UserProfileComponents/Videos';
+
 
 function UserProfile(props){
   return(
@@ -22,7 +24,12 @@ function UserProfile(props){
         handleChange={props.handleChange}/>
           <div className="DiaryVideo">
             <Diary />
+            <div className="ziggeovideos">
+            <h1 id="videos-h1">My Videos </h1>
+            <Videos />
+            </div>
           </div>
+
         </div>
      </div>
 )}
