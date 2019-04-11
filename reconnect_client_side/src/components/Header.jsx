@@ -6,8 +6,8 @@ function Header(){
   return(
     <div className="Header">
       <Logo />
-      <Link to="/login">Sign In</Link>
-      <Link to="/register">Sign Up</Link>
+      <Link className="login-logout-header" to="/login">Sign In</Link>
+      <Link className="login-logout-header" to="/">Sign Up</Link>
     </div>
   )
 }

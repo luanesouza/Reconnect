@@ -91,8 +91,16 @@ button{
 
 .Header{
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-around;
+  border: 1px solid rgba(152,223,175, .8);
+  padding-bottom: 1em;
+  padding-top: 1.5em;
+}
+
+.login-logout-header{
+  font-size: 1.5em;
+  color: #34623F;
 }
 
 .logo{
@@ -100,8 +108,13 @@ button{
   height: 3em;
 }
 
+.logo-header{
+  text-align: center;
+}
+
 .reconnectTitle{
   font-size: 1em;
+  color: #34623F;
 }
 
 a {
