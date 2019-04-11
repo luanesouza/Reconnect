@@ -244,6 +244,7 @@ button:active {
   white-space: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
+  padding-left: 2em;
 }
 
 .Appointment{
@@ -252,7 +253,10 @@ button:active {
 }
 
 .you-have-appointments{
-  font-size: 2em;
+  font-size: 2.5em;
+  font-weight: 500;
+  padding-left: 1.6em;
+  padding-bottom: .6em;
 }
 
 #app-info{

@@ -7,8 +7,8 @@ function UserHeader(){
     <div className="Header">
 
       <Logo />
-      <Link to='/therapists'> Therapists </Link>
-      <Link to='/'> Log Out </Link>
+      <Link className="login-logout-header" to='/therapists'> Therapists </Link>
+      <Link className="login-logout-header" to='/'> Log Out </Link>
 
     </div>
   )
