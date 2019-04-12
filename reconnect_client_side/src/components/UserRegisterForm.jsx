@@ -9,7 +9,11 @@ const RegisterForm = (props) => {
     <div>
       <Header />
       <div className="hero-img">
-      <div className="shade-over-hero-img">
+
+        <img className="iframe" src="https://media.giphy.com/media/7vASJ8Vnk76iVrx6V8/200w_d.gif" />
+
+       <div className="shade-over-hero-img">
+
         <p className="welcome-p">
           It's up to you today to start making healthy choices.
           <br/>

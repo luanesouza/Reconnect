@@ -23,9 +23,11 @@ function UserProfile(props){
         rescheduleAppointment={props.rescheduleAppointment}
         handleChange={props.handleChange}/>
           <div className="DiaryVideo">
+           <div id="diaryVideo">
             <Diary />
+           </div>
             <div className="ziggeovideos">
-            <h1 id="videos-h1">My Videos </h1>
+            <h1 id="videos-h1">My Journal </h1>
             <Videos />
             </div>
           </div>

@@ -45,12 +45,33 @@ button{
 }
 
 .hero-img{
-  background-image: url("https://previews.123rf.com/images/juliatochilina/juliatochilina1802/juliatochilina180200002/96060228-winter-forest-in-a-fog-painted-in-watercolor-isolated-on-white-background-.jpg");
+  background-image: url("https://markdejesus.com/wp-content/uploads/2014/06/Hands-Holding-Ipad.jpg");
   min-height: 45em;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+}
+
+.image-welcome-page{
+  margin: 0;
+}
+
+/* iframe{
+  padding-left: 37em !important;
+  height:130%;
+  width: 110%;
+  border-radius: 1em;
+} */
+
+.iframe{
+  position: absolute;
+  background-image: url("https://gph.is/g/ZPROqrE");
+  height: 27.5em;
+  width: 39em;
+  margin-left: 33em;
+  margin-top: 10em;
+  transform: rotate(-1deg);
 }
 
 .shade-over-hero-img{
@@ -60,7 +81,7 @@ button{
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  background-color: rgba(255,255,255, .1)
+  background-color: rgba(255,255,255, .7)
 }
 
 .register-h1{
@@ -230,6 +251,7 @@ button:active {
 /* CONSULT LIST & User Profile*/
 
 .AppointmentList{
+  /* height: 100vh; */
 }
 
 .AppointmentList{
@@ -243,12 +265,18 @@ button:active {
 
 .DiaryVideo{
   display: flex;
+  height: 100vh;
+  background-color: rgba(180,236,180, .1);
+}
+
+#diaryVideo{
   padding-top: 2em;
-  margin: 3.3em;
+  margin-top: 4em;
+  margin-left: 2em;
   width: 50em;
-  height: 30em;
   background-color: rgba(180,236,180, .1);
   border: .2em solid white;
+  height: 30em;
 }
 
 .ziggeo{
@@ -272,7 +300,9 @@ ziggeoplayer{
 }
 
 .Videos{
-  display: flex;
+  display: grid;
+  grid-template-columns: 21em 21em;
+  grid-template-rows: 50% 50%;
 }
 
 .profile-icon{
@@ -281,7 +311,7 @@ ziggeoplayer{
 }
 
 .therapistImg{
-  width: 16em;
+  width: 11em;
   height: 15em;
   border-radius: 1em;
   margin-bottom: 1.5em;

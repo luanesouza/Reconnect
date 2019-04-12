@@ -12,6 +12,13 @@ function Videos(){
     ziggeo-width={320}
     ziggeo-height={240}>
     </ziggeoplayer>
+
+    <ziggeoplayer
+    ziggeo-video="5a1659de768725d3926072fef91505bb"
+    ziggeo-width={320}
+    ziggeo-height={240}>
+    </ziggeoplayer>
+
   </div>
 )}
 export default Videos;
