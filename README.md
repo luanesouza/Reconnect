@@ -1,24 +1,18 @@
-# README
+# Reconnect
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![alt text](https://i.imgur.com/4WeL88l.png)
 
-Things you may want to cover:
 
-* Ruby version
+![alt text](https://i.imgur.com/XdHUWnv.png)
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+![alt text](https://i.imgur.com/eOV56uu.png)
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+![alt text](https://i.imgur.com/6CgW1An.png)
 
-* Deployment instructions
+## Database Relationship
 
-* ...
+![alt text](https://i.imgur.com/qZJtN0f.png)
