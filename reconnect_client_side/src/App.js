@@ -18,6 +18,7 @@ import TherapistProfile from './components/TherapistProfile'
 import Modal from './components/Modal';
 import AppointmentForm from './components/AppointmentForm';
 
+
 class App extends Component {
   constructor(){
     super()
@@ -41,7 +42,8 @@ class App extends Component {
       user_email: '',
       password: '',
       modalOpen: false,
-      modalAppointment: false
+      modalAppointment: false,
+      apiTherapists: ''
     }
     this.handleLogin = this.handleLogin.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -364,7 +366,6 @@ class App extends Component {
             modalAppointment={this.state.modalAppointment}/>
           </div>
         )} />
-
         <Modal
           closeModal={this.toggleModal}
           isOpen={this.state.modalOpen} />
