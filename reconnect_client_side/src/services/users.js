@@ -51,7 +51,7 @@ const registerUser = async (data) => {
 
 const getUserAppointments = async () => {
   try {
-    const resp = await api.get(`/users/1/appointments/`)
+    const resp = await api.get(`/users/1/appointments`)
     return resp.data;
   } catch (e) {
     console.error(e.message);
