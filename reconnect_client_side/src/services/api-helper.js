@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://git.heroku.com/dry-oasis-20600.git'
+  baseURL: 'https://dry-oasis-20600.herokuapp.com'
 });
 
 const updateToken = (token) => {
