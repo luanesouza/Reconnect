@@ -12,6 +12,7 @@ function UserProfile(props){
   return(
     <div>
     <UserHeader handleRedirect={props.handleRedirect} />
+     <div id="forest-bg">
       <div className="AppointmentList">
         <AppointmentList
         appointments={props.appointments}
@@ -23,15 +24,15 @@ function UserProfile(props){
         rescheduleAppointment={props.rescheduleAppointment}
         handleChange={props.handleChange}/>
           <div className="DiaryVideo">
-           <div id="diaryVideo">
-            <Diary />
-           </div>
-            <div className="ziggeovideos">
-            <h1 id="videos-h1">My Journal </h1>
-            <Videos />
-            </div>
+             <div id="diaryVideo">
+              <Diary />
+             </div>
+              <div className="ziggeovideos">
+              <h1 id="videos-h1">My Journal </h1>
+              <Videos />
+              </div>
           </div>
-
+         </div>
         </div>
      </div>
 )}

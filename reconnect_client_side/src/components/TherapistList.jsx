@@ -15,7 +15,7 @@ function TherapistList(props){
           <div className="name-location-specialty">
             <p className="therapist-list-info">Dr. {therapist.therapist_first_name} {therapist.therapist_last_name}</p> <br/>
             <p className="therapist-list-info">Location: <span>{therapist.location}</span></p>
-            <p className="therapist-list-info">Specialty: <span>{therapist.specialty}</span></p>
+            <p id="therapist-info">Skype: <span>{therapist.therapist_skype}</span></p>
             <button className="more-about-professional" onClick={(props) => getTherapist(therapist.id)}> More About This Professional</button>
           </div>
         </div>

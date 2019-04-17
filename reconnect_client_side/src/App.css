@@ -24,6 +24,7 @@ button{
 /* REGISTER FORM & WELCOME PAGE*/
 .RegisterForm{
   padding-top: 2em;
+  background-image: url("https://www.muralswallpaper.com/app/uploads/white-green-marble-textures-plain-820x532.jpg");
   position: absolute;
   right: 10em;
   text-align: center;
@@ -31,6 +32,7 @@ button{
   border-radius: 1em;
   background-color: rgb(245,245,245);
   background-repeat: no-repeat;
+  background-size: cover;
   width: 35em;
   height: 36em;
   box-shadow: 5px 9px #888888;
@@ -250,14 +252,18 @@ button:active {
 
 /* CONSULT LIST & User Profile*/
 
-.AppointmentList{
-  /* height: 100vh; */
+#forest-bg{
+
 }
 
 .AppointmentList{
-  background-color: rgba(180,236,180, .2);
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 120vh;
+  background-image: url("https://images.pexels.com/photos/4827/nature-forest-trees-fog.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200");
+  min-width: 50em;
+  /* background-color: rgba(180,236,180, .2); */
+  /* background-repeat: no-repeat; */
+  background-size:cover;
+  /* background-repeat: no-repeat; */
   position: absolute;
   /* height: 100vh; */
   width: 100vw;
@@ -265,38 +271,47 @@ button:active {
 
 .DiaryVideo{
   display: flex;
-  height: 100vh;
   background-color: rgba(180,236,180, .1);
+  min-height: 20em;
+  /* background-image: url("https://images.pexels.com/photos/4827/nature-forest-trees-fog.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"); */
+  /* background-position: top; */
+  background-position: center;
+  /* background-size: cover; */
+  background-clip: inherit;
 }
 
 #diaryVideo{
   padding-top: 2em;
   margin-top: 4em;
-  margin-left: 2em;
-  width: 50em;
+  margin-left: 1.5em;
+  width: 35em;
   background-color: rgba(180,236,180, .1);
   border: .2em solid white;
-  height: 30em;
+  height: 18em;
 }
 
 .ziggeo{
-  text-align: center!important;
-  padding-left: 2.5em;
+  min-width: 50em;
+  padding-left: 4.2em;
   padding-right: 0;
   margin-right: 0;
 }
 
 .ziggeovideos{
+  min-width: 20em;
   padding: 1em;
-  margin-left: 15em;
+  margin-left: 3.5em;
 }
 
 #videos-h1{
   padding-bottom: 1em;
+  min-width: 1em;
+  color: white;
 }
 
 ziggeoplayer{
   padding: 1em;
+  min-width: 2em;
 }
 
 .Videos{
@@ -432,6 +447,9 @@ span{
 
 .therapistList{
   background-color: rgba(152,223,175, .5);
+  /* background-image: url("https://images.wallpaperscraft.com/image/forest_fog_aerial_view_129318_1920x1080.jpg");
+  background-position: center; */
+  /* background-size: cover; */
 }
 
 .redirect-to-therapists{
@@ -447,6 +465,8 @@ span{
   margin: 3em;
   border: .2em solid rgb(240,255,240);
   background-color: #FDFDFF;
+  background-image: url("https://images.wallpaperscraft.com/image/forest_fog_aerial_view_129318_1920x1080.jpg");
+  background-size: contain;
   box-shadow: 5px 5px #888888;
 }
 
@@ -484,6 +504,8 @@ span{
 
 .TherapistProfile{
   background-color: #FDFDFF;
+  background-image: url("https://wallpapercave.com/wp/wp3455151.jpg");
+  background-size: contain;
 }
 
 .therapistImage{
