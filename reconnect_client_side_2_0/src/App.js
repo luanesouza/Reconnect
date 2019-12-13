@@ -1,10 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Profile from './components/user/Profile'
 
 function App() {
   return (
     <main className="App">
+      <Profile />
     </main>
   );
 }

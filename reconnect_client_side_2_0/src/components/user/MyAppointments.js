@@ -1,7 +1,6 @@
 import React from 'react';
-import { Navigation } from './styles'
 
-function NavBar(){
+function MyAppointments(){
   return(
     <Navigation>
       <h2>This is a Navbar</h2>
@@ -9,4 +8,4 @@ function NavBar(){
   )
 }
 
-export default NavBar;
+export default MyAppointments;
