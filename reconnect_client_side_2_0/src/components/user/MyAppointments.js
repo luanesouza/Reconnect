@@ -1,10 +1,11 @@
 import React from 'react';
+import NavBar from './NavBar'
 
 function MyAppointments(){
   return(
-    <Navigation>
-      <h2>This is a Navbar</h2>
-    </Navigation>
+    <section>
+      My Appointments
+    </section>
   )
 }
 
