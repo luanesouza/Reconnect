@@ -1,15 +1,24 @@
 import styled from 'styled-components'
 
 
+export const Container = styled.main `
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`
+
 // NavBar
 export const Navigation = styled.nav `
   bottom: 0;
   background-color: #79AEA3;
-  width: 100vw;
   height: 10vh;
   padding-top: 2vh;
   display: flex;
   justify-content: space-around;
+  overflow: hidden;
+  position: fixed;
+
+
 
   a {
     padding-top: 2.5vh;
@@ -24,7 +33,7 @@ export const Navigation = styled.nav `
   section {
     display: flex;
     flex-direction: row;
-
+    height: 100%;
   }
 
   .activeLink {
@@ -35,6 +44,14 @@ export const Navigation = styled.nav `
     width: 25%;
   }
 `
+
+export const DiarySection = styled.section `
+  height: 30vh;
+  background-color: red;
+  margin: 1em .5em 1em;
+  border: 3px solid black;
+`
+
 
 export const FourOhFourStyle = styled.div `
   width: 100vw;
