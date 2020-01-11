@@ -3,7 +3,7 @@ class CreateDiaries < ActiveRecord::Migration[5.2]
     create_table :diaries do |t|
       t.string :title
       t.text :content
-      t.integer :diary_symptom_id
+      t.string :image_url
       t.integer :user_id
 
       t.timestamps
