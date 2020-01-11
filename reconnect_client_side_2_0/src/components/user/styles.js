@@ -5,13 +5,14 @@ export const Container = styled.main `
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: rgba(247,191,180, .4);
 `
 
 // NavBar
 export const Navigation = styled.nav `
   bottom: 0;
   width: 100vw;
-  background-color: #79AEA3;
+  background-color: #7DAF9C;
   padding-bottom: 2vh;
   display: flex;
   justify-content: space-around;
@@ -47,9 +48,25 @@ export const Navigation = styled.nav `
 
 export const DiarySection = styled.section `
   height: 30vh;
-  background-color: red;
-  margin: 1em .5em 1em;
-  border: 3px solid black;
+
+  /* background-color: rgba(247,191,180, .5);
+   */
+  background: url(${props => props.image_url});
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 1em .5em 5em;
+  border: 3px solid rgba(201,228,202, .5);
+
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Dosis', sans-serif;
+    text-shadow: 1px 1px black;
+    color: white;
+    font-size: 10vw;
+    letter-spacing: 3px;
+    background-color: rgba(201,228,202, .5);
+  }
 `
 
 

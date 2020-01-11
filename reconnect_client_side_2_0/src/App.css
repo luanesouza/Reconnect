@@ -5,3 +5,11 @@
 html, body {
 
 }
+
+.giphy-embed {
+  padding: 70px 0;
+  text-align: center;
+}
+
+.giphy-embed > #giphy-embed {
+}
