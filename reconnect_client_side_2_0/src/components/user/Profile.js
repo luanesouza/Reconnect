@@ -3,6 +3,7 @@ import {Route, Switch} from 'react-router-dom'
 import NavBar from './NavBar'
 import {Container} from './styles'
 import CalendarComponent from './Calendar'
+import Diaries from './Diaries'
 import Diary from './Diary'
 import FourOhFour from '../FourOhFour'
 
@@ -13,7 +14,8 @@ export default function Profile() {
     <Container>
       <NavBar />
       <Switch>
-        <Route path={'/diary'} component={Diary}/>
+        <Route path={'/diaries'} component={Diaries}/>
+        <Route path={'/diary'} component={Diary} />
         <Route path={'*'} component={FourOhFour} />
       </Switch>
     </Container>

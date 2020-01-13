@@ -9,7 +9,7 @@ function NavBar(){
     <Navigation>
       <section>
         <NavLink
-          to='/diary'
+          to='/diaries'
           activeClassName={'activeLink'}
           >
           <img

@@ -7,10 +7,18 @@ const allDiaries = async () => {
     const res = await axios.get(`${URL}/diaries`)
 
     return res.data
-
   } catch(e) {
       console.error(e.message);
   }
 }
 
-export {allDiaries}
+const oneDiary = async (id) => {
+  try {
+    const res = await axios.get(`${URL}/diaries/${id}`)
+    return res.data
+  } catch(e) {
+    console.error(e.message);
+  }
+}
+
+export { allDiaries, oneDiary }
