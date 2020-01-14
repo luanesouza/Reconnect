@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import {Route, Switch} from 'react-router-dom'
 import { withRouter } from "react-router";
-
+import UserLoginForm from './UserLoginForm.js'
 import NavBar from './NavBar'
 import {Container} from './styles'
-import CalendarComponent from './Calendar'
 import { allDiaries, oneDiary } from './api-data'
 import Diaries from './Diaries'
 import Diary from './Diary'
@@ -68,6 +67,7 @@ class Profile extends Component {
               /> }
             />
           <Route path={'/diary'} component={() => <Diary diary={this.state.diary}/>} />
+          <Route path={'/login'} component={() => <UserLoginForm/>}/>
           <Route path={'*'} component={FourOhFour} />
         </Switch>
       </Container>

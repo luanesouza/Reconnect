@@ -6,8 +6,6 @@ export default function Diary(){
 
   const formatter = (diaryContent) => {
     let paragraph = diaryContent.split('. ').map( content => <p>{content}</p>)
-
-    console.log(paragraph);
     return paragraph;
 
   }

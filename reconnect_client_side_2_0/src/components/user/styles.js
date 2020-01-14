@@ -45,6 +45,53 @@ export const Navigation = styled.nav `
     width: 20px;
   }
 `
+
+// Form
+
+export const FormSection = styled.section `
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  background-color: white;
+
+  h1 {
+    padding: 1rem;
+    font-size:  1rem;
+    color: white;
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+  }
+
+  input {
+    padding: .5rem;
+    margin-bottom: 1rem;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: #F7BFB4;
+  }
+
+  input:focus {
+  border-color: #C9E4CA;
+}
+
+button {
+  margin-top: 1.5rem;
+  border-width: 0 0 2px;
+  border-color: #F7BFB4;
+  background-color: white;
+  color: gray;
+}
+
+button:hover {
+  border-width: 0 .5px 2px;
+}
+
+`
 //Diary Section
 
 export const DiaryShowPage = styled.section `
@@ -53,8 +100,12 @@ export const DiaryShowPage = styled.section `
 
   h1 {
     text-align: center;
+    padding-top: .5rem;
     margin-bottom: 2rem;
-
+    font-family: 'Dosis', sans-serif;
+    text-shadow: 1px 1px white;
+    color: black;
+    font-size: 10vw;
   }
 
   p {
