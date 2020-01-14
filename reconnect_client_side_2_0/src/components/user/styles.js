@@ -42,7 +42,7 @@ export const Navigation = styled.nav `
   }
 
   img {
-    width: 25%;
+    width: 20px;
   }
 `
 //Diary Section

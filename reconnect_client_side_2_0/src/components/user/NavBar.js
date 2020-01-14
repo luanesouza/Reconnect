@@ -45,6 +45,21 @@ function NavBar(){
           <p>Browse Therapists </p>
         </NavLink>
       </section>
+
+      <section>
+        <NavLink
+          to='/logout'
+          activeClassName={'activeLink'}
+          >
+          <img
+          src='http://cdn.onlinewebfonts.com/svg/img_77551.png'
+          alt='logo'
+          />
+          <p>Logout </p>
+        </NavLink>
+      </section>
+
+
     </Navigation>
   )
 }

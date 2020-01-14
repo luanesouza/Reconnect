@@ -2,8 +2,16 @@ import React, {Component} from 'react';
 import { DiaryShowPage } from './styles'
 
 export default function Diary(){
-
   let diaryBackup = JSON.parse(localStorage.getItem('diary_chosen'))
+
+  const formatter = (diaryContent) => {
+    let array = diaryContent.split('. ')
+    let paragraph = array.map( content => <p>{content}</p>)
+    console.log(paragraph);
+    return paragraph;
+
+  }
+
 
   return (
     <DiaryShowPage>
@@ -13,7 +21,7 @@ export default function Diary(){
 
         <>
           <h1> {diaryBackup.title} </h1>
-          <p> {diaryBackup.content} </p>
+          <p> {formatter(diaryBackup.content)} </p>
         </>
 
         :
