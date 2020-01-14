@@ -5,8 +5,8 @@ export default function Diary(){
   let diaryBackup = JSON.parse(localStorage.getItem('diary_chosen'))
 
   const formatter = (diaryContent) => {
-    let array = diaryContent.split('. ')
-    let paragraph = array.map( content => <p>{content}</p>)
+    let paragraph = diaryContent.split('. ').map( content => <p>{content}</p>)
+
     console.log(paragraph);
     return paragraph;
 
