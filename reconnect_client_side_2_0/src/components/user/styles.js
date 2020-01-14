@@ -48,12 +48,13 @@ export const Navigation = styled.nav `
 //Diary Section
 
 export const DiaryShowPage = styled.section `
-  background-color: rgba(0,0,0, .4);
-  margin: 3rem;
+  background-color: rgba(201,228,202, .4);
+  margin: 3rem .6rem;
 
   h1 {
     text-align: center;
     margin-bottom: 2rem;
+
   }
 
   p {

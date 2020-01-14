@@ -6,11 +6,19 @@ export default function Diary(){
   let diaryBackup = JSON.parse(localStorage.getItem('diary_chosen'))
 
   return (
-
     <DiaryShowPage>
-      <h1> {diaryBackup.title} </h1>
+      { diaryBackup
 
-      <p>{diaryBackup.content}</p>
+        ?
+
+        <>
+          <h1> {diaryBackup.title} </h1>
+          <p> {diaryBackup.content} </p>
+        </>
+
+        :
+        <h1>Failed to load. Please try again </h1>
+      }
     </DiaryShowPage>
   )
 }
