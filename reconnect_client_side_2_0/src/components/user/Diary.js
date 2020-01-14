@@ -1,13 +1,16 @@
 import React, {Component} from 'react';
-import { DiarySection } from './styles'
+import { DiaryShowPage } from './styles'
 
-export default class Diary extends Component {
-render() {
-  const { diary } = this.props
-  console.log('props', this.props);
+export default function Diary(){
+
+  let diaryBackup = JSON.parse(localStorage.getItem('diary_chosen'))
 
   return (
-    <h1> {diary.title} </h1>
+
+    <DiaryShowPage>
+      <h1> {diaryBackup.title} </h1>
+
+      <p>{diaryBackup.content}</p>
+    </DiaryShowPage>
   )
-}
 }

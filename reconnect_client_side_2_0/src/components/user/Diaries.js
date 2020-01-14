@@ -1,56 +1,22 @@
 import React, {Component} from 'react';
-import { allDiaries, oneDiary } from './api-data'
 import { DiarySection } from './styles'
+
+import { allDiaries, oneDiary } from './api-data'
 import Diary from './Diary'
 
-export default class Diaries extends Component {
-  state = {
-    diaries: [],
-    loaded: false,
-    diary: ''
-  }
+export default function Diaries(props){
 
-  async componentDidMount(){
-    const diaries = await allDiaries()
-    if(diaries) {
-      this.setState({
-        diaries: diaries,
-        loaded: true
-      })
-    } else {
-      this.setState({
-        loaded: false
-      })
-    }
-  }
 
-  async diaryShowPage(id){
-    console.log('clicked', id);
-    const diary = await oneDiary(id)
-    console.log(diary);
-
-    this.setState({
-      diary
-    })
-    this.props.history.push('/diary')
-  }
-
-  render(){
-    const diaries = this.state.diaries.map(diary =>  (
-      <DiarySection
-        image_url={diary.image_url}
-        key={diary.title}
-        onClick={() => this.diaryShowPage(diary.id)}
-        >
-        <Diary diary={diary}/>
-      </DiarySection>
-
-    ))
-
+      const diaries = props.diaries.map( (diary, idx) => (
+        <DiarySection key={idx} image_url={diary.image_url}  onClick={() => props.diaryShowPage(diary.id)}>
+          <h1>{diary.title} </h1>
+        </DiarySection >
+        )
+      )
     return (
       <section>
         {
-          this.state.loaded
+          props.loaded
           ?
           diaries
           :
@@ -58,8 +24,6 @@ export default class Diaries extends Component {
             <iframe id='giphy-embed' src="https://giphy.com/embed/l4FGIO2vCfJkakBtC" frameBorder="0"  allowFullScreen></iframe>
           </div>
         }
-
       </section>
     )
-  }
 }

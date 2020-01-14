@@ -45,6 +45,23 @@ export const Navigation = styled.nav `
     width: 25%;
   }
 `
+//Diary Section
+
+export const DiaryShowPage = styled.section `
+  background-color: rgba(0,0,0, .4);
+  margin: 3rem;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    padding: .5rem;
+  }
+`
+
+
 
 export const DiarySection = styled.section `
   height: 30vh;
@@ -69,7 +86,6 @@ export const DiarySection = styled.section `
   }
 `
 
-
 export const FourOhFourStyle = styled.div `
   display: flex;
   align-items: baseline;
@@ -87,6 +103,7 @@ export const FourOhFourStyle = styled.div `
     background-size: cover;
     background-position: center;
   }
+
 
 
 

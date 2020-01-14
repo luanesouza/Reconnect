@@ -1,23 +1,78 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {Route, Switch} from 'react-router-dom'
+import { withRouter } from "react-router";
+
 import NavBar from './NavBar'
 import {Container} from './styles'
 import CalendarComponent from './Calendar'
+import { allDiaries, oneDiary } from './api-data'
 import Diaries from './Diaries'
 import Diary from './Diary'
 import FourOhFour from '../FourOhFour'
 
 
-export default function Profile() {
+class Profile extends Component {
 
-  return(
-    <Container>
-      <NavBar />
-      <Switch>
-        <Route path={'/diaries'} component={Diaries}/>
-        <Route path={'/diary'} component={Diary} />
-        <Route path={'*'} component={FourOhFour} />
-      </Switch>
-    </Container>
-  )
+  state = {
+    diaries: [],
+    loaded: false,
+    diary: ''
+  }
+
+  async componentDidMount(){
+    const diaries = await allDiaries()
+
+    if(diaries) {
+      this.setState({
+        diaries: diaries,
+        loaded: true,
+
+      })
+    } else {
+      this.setState({
+        loaded: false
+      })
+    }
+  }
+
+
+
+  diaryShowPage = async (id) => {
+   console.log('clicked', id);
+   const diary = await oneDiary(id)
+
+    localStorage.setItem('diary_chosen', JSON.stringify(diary))
+
+
+   this.setState({
+     diary
+   })
+
+   this.props.history.push('/diary')
+ }
+
+
+
+  render() {
+
+
+    return (
+      <Container>
+        <NavBar />
+        <Switch>
+          <Route path={'/diaries'} render={() =>
+              <Diaries
+                loaded={this.state.loaded}
+                diaries={this.state.diaries}
+                diaryShowPage={this.diaryShowPage}
+              /> }
+            />
+          <Route path={'/diary'} component={() => <Diary diary={this.state.diary}/>} />
+          <Route path={'*'} component={FourOhFour} />
+        </Switch>
+      </Container>
+    )
+  }
 }
+
+export default withRouter(Profile)
