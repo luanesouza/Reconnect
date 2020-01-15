@@ -53,6 +53,7 @@ export const FormSection = styled.section `
   width: 50%;
   padding: 10px;
   background-color: white;
+  text-align:center;
 
   h1 {
     padding: 1rem;
@@ -77,6 +78,15 @@ export const FormSection = styled.section `
 
   input:focus {
   border-color: #C9E4CA;
+}
+
+img {
+  width: 40%;
+  border-color: coral;
+  background-color: white;
+  border: 2px solid #C9E4CA;
+  border-radius: 50%;
+  margin: 1rem;
 }
 
 button {
@@ -110,6 +120,20 @@ export const DiaryShowPage = styled.section `
 
   p {
     padding: .5rem;
+  }
+
+  img {
+    width: 15%;
+    bottom: 0;
+    padding-bottom: 2vh;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    position: fixed;
+    /* background-color: white; */
+    right: 0;
+  }
+
   }
 `
 

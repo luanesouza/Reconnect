@@ -1,7 +1,12 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
+
+import { withRouter } from "react-router";
 import { DiaryShowPage } from './styles'
 
-export default function Diary(){
+
+function Diary(props){
+  const [scroll, setScroll] = useState(false)
+
   let diaryBackup = JSON.parse(localStorage.getItem('diary_chosen'))
 
   const formatter = (diaryContent) => {
@@ -10,9 +15,17 @@ export default function Diary(){
 
   }
 
+  const goBack = (props) => {
+    console.log(props.history);
+};
+
 
   return (
     <DiaryShowPage>
+      <button onClick={(props) => goBack(props)}>
+        <img src='https://img.icons8.com/pastel-glyph/2x/circled-left.png'/>
+      </button>
+
       { diaryBackup
 
         ?
@@ -28,3 +41,6 @@ export default function Diary(){
     </DiaryShowPage>
   )
 }
+
+
+export default withRouter(Diary)

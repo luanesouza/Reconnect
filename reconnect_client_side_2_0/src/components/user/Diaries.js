@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import { DiarySection } from './styles'
+import NavBar from './NavBar'
+
+
 
 export default function Diaries(props){
 
@@ -11,13 +14,15 @@ export default function Diaries(props){
         >
 
         <h1> {diary.title} </h1>
-        
+
       </DiarySection >
       )
     )
 
     return (
       <section>
+      <NavBar />
+
         {
           props.loaded
           ?
