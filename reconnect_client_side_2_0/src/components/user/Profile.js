@@ -5,6 +5,7 @@ import UserLoginForm from './UserLoginForm.js'
 import {Container} from './styles'
 import { allDiaries, oneDiary } from './api-data'
 import Diaries from './Diaries'
+import MyAppointments from './MyAppointments'
 import Diary from './Diary'
 import FourOhFour from '../FourOhFour'
 
@@ -49,6 +50,13 @@ class Profile extends Component {
    this.props.history.push(`/diary`)
  }
 
+ goBack = () => {
+   console.log(this.props);
+
+   this.props.history.goBack()
+   console.log('clicked');
+ }
+
 
 
   render() {
@@ -63,10 +71,27 @@ class Profile extends Component {
                 diaries={this.state.diaries}
                 diaryShowPage={this.diaryShowPage}
               /> }
+          />
+
+          <Route path={'/diary'} render={() =>
+              <Diary
+                diary={this.state.diary}
+                goBack={this.goBack}/>}
+          />
+
+          <Route path={'/login'} render={() =>
+            <UserLoginForm/> }
             />
-          <Route path={'/diary'} render={(props) => <Diary diary={this.state.diary}/>} />
-          <Route path={'/login'} component={() => <UserLoginForm/>}/>
-          <Route path={'*'} component={FourOhFour} />
+
+          <Route path={'/appointments'} render={() =>
+            <MyAppointments
+              goBack={this.goBack}/> }
+            />
+
+          <Route path={'*'} render={() =>
+            <FourOhFour />}
+          />
+          
         </Switch>
       </Container>
     )

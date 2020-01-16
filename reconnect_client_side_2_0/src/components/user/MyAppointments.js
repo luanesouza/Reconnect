@@ -1,11 +1,14 @@
 import React from 'react';
 import NavBar from './NavBar'
+import { DiaryShowPage } from './styles'
+import BackButton from '../BackButton'
 
-function MyAppointments(){
+function MyAppointments(props){
   return(
-    <section>
+    <DiaryShowPage>
       My Appointments
-    </section>
+      <BackButton goBack={props.goBack}/>
+    </DiaryShowPage>
   )
 }
 

@@ -1,5 +1,5 @@
 import React, {Component, useState} from 'react';
-
+import BackButton from '../BackButton'
 import { withRouter } from "react-router";
 import { DiaryShowPage } from './styles'
 
@@ -16,17 +16,11 @@ function Diary(props){
 
   }
 
-  const goBack = (props) => {
-    console.log(props);
-};
-
+  console.log(props);
 
   return (
     <DiaryShowPage>
-      <button onClick={(props) => goBack(props)}>
-        <img src='https://img.icons8.com/pastel-glyph/2x/circled-left.png'/>
-      </button>
-
+      <BackButton goBack={props.goBack}/>
       { diaryBackup
 
         ?
