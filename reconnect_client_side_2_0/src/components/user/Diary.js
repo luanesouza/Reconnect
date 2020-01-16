@@ -5,6 +5,7 @@ import { DiaryShowPage } from './styles'
 
 
 function Diary(props){
+  window.scrollTo(0, 0);
   const [scroll, setScroll] = useState(false)
 
   let diaryBackup = JSON.parse(localStorage.getItem('diary_chosen'))
@@ -16,7 +17,7 @@ function Diary(props){
   }
 
   const goBack = (props) => {
-    console.log(props.history);
+    console.log(props);
 };
 
 

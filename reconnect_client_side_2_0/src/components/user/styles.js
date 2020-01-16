@@ -120,6 +120,7 @@ export const DiaryShowPage = styled.section `
 
   p {
     padding: .5rem;
+    text-align: justify;
   }
 
   img {
@@ -134,7 +135,7 @@ export const DiaryShowPage = styled.section `
     right: 0;
   }
 
-  }
+}
 `
 
 

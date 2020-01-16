@@ -46,7 +46,7 @@ class Profile extends Component {
      diary
    })
 
-   this.props.history.push('/diary')
+   this.props.history.push(`/diary`)
  }
 
 
@@ -64,7 +64,7 @@ class Profile extends Component {
                 diaryShowPage={this.diaryShowPage}
               /> }
             />
-          <Route path={'/diary'} component={(props) => <Diary {...props} diary={this.state.diary}/>} />
+          <Route path={'/diary'} render={(props) => <Diary diary={this.state.diary}/>} />
           <Route path={'/login'} component={() => <UserLoginForm/>}/>
           <Route path={'*'} component={FourOhFour} />
         </Switch>
