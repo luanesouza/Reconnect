@@ -48,12 +48,13 @@ export const Navigation = styled.nav `
 
 // Form
 
-export const SignupFormSection = styled.section `
-  margin-bottom: 5rem;
+export const LoginFormSection = styled.section `
+  margin-top: 1rem;
   padding: 10px;
-  text-align:center;
+  float: right;
 
   input {
+    width: 90%;
     padding: .5rem;
     margin-bottom: 1rem;
     border-left: 0 none;
@@ -61,7 +62,6 @@ export const SignupFormSection = styled.section `
     border-right: 2px solid black;
     border-bottom: 2px solid black;
     border-color: #F7BFB4;
-    margin-left: auto;
   }
 
   input:focus {
@@ -71,17 +71,23 @@ export const SignupFormSection = styled.section `
   #login-button {
     float: right;
     align-self: flex-end;
+    color: gray;
+
+  }
+
+  button:hover {
+    cursor: pointer;
+    border-width: 0 .5px 2px;
   }
 
   form {
-    margin: auto;
+    flex-grow: 2;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    flex-direction: column;
   }
 `
 
-export const LoginFormSection = styled.section `
+export const SignupFormSection = styled.section `
   margin: auto;
   width: 70%;
   padding: 10px;
@@ -100,11 +106,11 @@ export const LoginFormSection = styled.section `
     align-items: center;
     justify-items: center;
     flex-direction: column;
+    width: 70%;
   }
 
   input {
     padding: .5rem;
-    margin-bottom: 1rem;
     outline: 0;
     border-width: 0 0 2px;
     border-color: #F7BFB4;
@@ -137,6 +143,7 @@ button {
 }
 
 button:hover {
+  cursor: pointer;
   border-width: 0 .5px 2px;
 }
 

@@ -13,3 +13,10 @@ html, body {
 
 .giphy-embed > #giphy-embed {
 }
+
+.user-forms {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: rgba(247,191,180, .4);
+}
