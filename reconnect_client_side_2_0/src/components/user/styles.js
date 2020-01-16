@@ -72,7 +72,10 @@ export const LoginFormSection = styled.section `
     float: right;
     align-self: flex-end;
     color: gray;
-
+    background-color: white;
+    padding: .2rem;
+    border-width: 0 0 2px;
+    border-color: #F7BFB4;
   }
 
   button:hover {
