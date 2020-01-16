@@ -48,9 +48,42 @@ export const Navigation = styled.nav `
 
 // Form
 
-export const FormSection = styled.section `
+export const SignupFormSection = styled.section `
+  margin-bottom: 5rem;
+  padding: 10px;
+  text-align:center;
+
+  input {
+    padding: .5rem;
+    margin-bottom: 1rem;
+    border-left: 0 none;
+    border-top: 0 none;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    border-color: #F7BFB4;
+    margin-left: auto;
+  }
+
+  input:focus {
+    border-color: #C9E4CA;
+  }
+
+  #login-button {
+    float: right;
+    align-self: flex-end;
+  }
+
+  form {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+`
+
+export const LoginFormSection = styled.section `
   margin: auto;
-  width: 50%;
+  width: 70%;
   padding: 10px;
   background-color: white;
   text-align:center;
@@ -62,6 +95,7 @@ export const FormSection = styled.section `
   }
 
   form {
+    margin: auto;
     display: flex;
     align-items: center;
     justify-items: center;
@@ -77,8 +111,13 @@ export const FormSection = styled.section `
   }
 
   input:focus {
-  border-color: #C9E4CA;
-}
+    border-color: #C9E4CA;
+  }
+
+  #join-us {
+    padding-top: 2rem;
+    font-size: 50%;
+  }
 
 img {
   width: 40%;
@@ -142,7 +181,6 @@ export const DiaryShowPage = styled.section `
 
 export const DiarySection = styled.section `
   height: 30vh;
-
   /* background-color: rgba(247,191,180, .5);
    */
   background: url(${props => props.image_url});

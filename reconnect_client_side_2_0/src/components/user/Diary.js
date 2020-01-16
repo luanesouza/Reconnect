@@ -6,17 +6,14 @@ import { DiaryShowPage } from './styles'
 
 function Diary(props){
   window.scrollTo(0, 0);
-  const [scroll, setScroll] = useState(false)
 
   let diaryBackup = JSON.parse(localStorage.getItem('diary_chosen'))
 
   const formatter = (diaryContent) => {
     let paragraph = diaryContent.split('. ').map( content => <p>{content}</p>)
     return paragraph;
-
   }
 
-  console.log(props);
 
   return (
     <DiaryShowPage>

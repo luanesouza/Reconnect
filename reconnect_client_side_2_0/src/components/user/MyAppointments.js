@@ -5,7 +5,7 @@ import BackButton from '../BackButton'
 
 function MyAppointments(props){
   return(
-    <DiaryShowPage>
+    <DiaryShowPage> 
       My Appointments
       <BackButton goBack={props.goBack}/>
     </DiaryShowPage>

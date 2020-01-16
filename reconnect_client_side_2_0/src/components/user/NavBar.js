@@ -48,7 +48,7 @@ function NavBar(){
 
       <section>
         <NavLink
-          to='/logout'
+          to='/login'
           activeClassName={'activeLink'}
           >
           <img

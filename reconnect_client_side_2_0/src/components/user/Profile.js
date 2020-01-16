@@ -51,16 +51,13 @@ class Profile extends Component {
  }
 
  goBack = () => {
-   console.log(this.props);
-
    this.props.history.goBack()
-   console.log('clicked');
  }
 
 
 
   render() {
-
+    console.log(this.props);
 
     return (
       <Container>
@@ -91,7 +88,7 @@ class Profile extends Component {
           <Route path={'*'} render={() =>
             <FourOhFour />}
           />
-          
+
         </Switch>
       </Container>
     )
