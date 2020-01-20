@@ -50,9 +50,9 @@ export default class UserLoginForm extends React.Component {
         <SignupFormSection>
           <img src='https://www.graphicsprings.com/filestorage/stencils/3c0d59eba085b4c25dba55b6f5afdf6d.png?width=500&height=500'/>
           <form>
-            <input type='text' value={this.state.signupName} placeholder='signupName' autoComplete="off"/>
-            <input type='text' value={this.state.signupEmail} placeholder='signupEmail' autoComplete="off"/>
-            <input type='text' value={this.state.signupPassword} placeholder='signupPassword' autoComplete="off"/>
+            <input type='text' value={this.state.signupName} placeholder='name' autoComplete="off"/>
+            <input type='text' value={this.state.signupEmail} placeholder='email' autoComplete="off"/>
+            <input type='text' value={this.state.signupPassword} placeholder='password' autoComplete="off"/>
             <button onClick={(e) => handleSignupSubmit(e)}>Join Us</button>
           </form>
         </SignupFormSection>
