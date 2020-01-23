@@ -61,33 +61,32 @@ class Profile extends Component {
     return (
       <Container>
         <Switch>
-          <Route path={'/diaries'} render={() =>
-              <Diaries
-                loaded={this.state.loaded}
-                diaries={this.state.diaries}
-                diaryShowPage={this.diaryShowPage}
-              /> }
-          />
-
-          <Route path={'/diary'} render={() =>
-              <Diary
-                diary={this.state.diary}
-                goBack={this.goBack}/>}
-          />
-
-          <Route path={'/login'} render={() =>
+          <Route exact path={'/'} render={() =>
             <UserLoginForm/> }
             />
 
-          <Route path={'/appointments'} render={() =>
-            <MyAppointments
-              goBack={this.goBack}/> }
+            <Route path={'/diaries'} render={() =>
+                <Diaries
+                  loaded={this.state.loaded}
+                  diaries={this.state.diaries}
+                  diaryShowPage={this.diaryShowPage}
+                /> }
             />
 
-          <Route path={'*'} render={() =>
-            <FourOhFour />}
-          />
+            <Route path={'/diary'} render={() =>
+                <Diary
+                  diary={this.state.diary}
+                  goBack={this.goBack}/>}
+            />
 
+            <Route path={'/appointments'} render={() =>
+              <MyAppointments
+                goBack={this.goBack}/> }
+              />
+
+            <Route path={'*'} render={() =>
+              <FourOhFour />}
+            />
         </Switch>
       </Container>
     )
