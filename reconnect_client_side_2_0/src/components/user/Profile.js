@@ -37,8 +37,8 @@ class Profile extends Component {
 
 
   diaryShowPage = async (id) => {
-   console.log('clicked', id);
-   const diary = await oneDiary(id)
+     console.log('clicked', id);
+     const diary = await oneDiary(id)
 
     localStorage.setItem('diary_chosen', JSON.stringify(diary))
 

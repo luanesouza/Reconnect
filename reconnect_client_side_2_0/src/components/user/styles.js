@@ -49,12 +49,11 @@ export const Navigation = styled.nav `
 // Form
 
 export const LoginFormSection = styled.section `
-  margin-top: 1rem;
+  margin: 1rem 2rem;
   padding: 10px;
-  float: right;
 
   input {
-    width: 90%;
+    width: 10rem;
     padding: .5rem;
     margin-bottom: 1rem;
     border-left: 0 none;
@@ -84,15 +83,17 @@ export const LoginFormSection = styled.section `
   }
 
   form {
-    flex-grow: 2;
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
   }
 `
 
 export const SignupFormSection = styled.section `
   margin: auto;
-  width: 70%;
+  width: 15rem;
+  height: 20rem;
   padding: 10px;
   background-color: white;
   text-align:center;
@@ -129,8 +130,7 @@ export const SignupFormSection = styled.section `
   }
 
 img {
-  width: 40%;
-  border-color: coral;
+  width: 3.5rem;
   background-color: white;
   border: 2px solid #C9E4CA;
   border-radius: 50%;
