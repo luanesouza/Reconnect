@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {Component} from 'react'
+import {withRouter} from 'react-router'
 import { LoginFormSection, SignupFormSection } from './styles'
 
-export default class UserLoginForm extends React.Component {
+class UserLoginForm extends Component {
   state = {
     signupName: '',
     signupEmail: '',
@@ -12,7 +13,7 @@ export default class UserLoginForm extends React.Component {
   }
 
   render() {
-    
+
     const handleChange = (evt) => {
       console.log(evt);
       const {name, value} = evt.target
@@ -23,12 +24,13 @@ export default class UserLoginForm extends React.Component {
 
     const handleLoginSubmit = (e) => {
       e.preventDefault()
-      console.log(this.state);
+      this.props.history.push('/diaries')
     }
 
     const handleSignupSubmit = (e) => {
       e.preventDefault()
       console.log(this.state.signupObj);
+      console.log(this.props);
     }
 
 
@@ -60,3 +62,5 @@ export default class UserLoginForm extends React.Component {
     )
   }
 }
+
+export default withRouter(UserLoginForm);

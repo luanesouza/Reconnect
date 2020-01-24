@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { DiarySection } from './styles'
 import NavBar from './NavBar'
 
@@ -21,12 +21,15 @@ export default function Diaries(props){
 
     return (
       <section>
-      <NavBar />
+        <NavBar />
 
         {
           props.loaded
           ?
-          diaries
+          <>
+          <button id='add-button'/>
+          {diaries}
+          </>
           :
           <div className="giphy-embed">
             <iframe id='giphy-embed' src="https://giphy.com/embed/l4FGIO2vCfJkakBtC" frameBorder="0"  allowFullScreen></iframe>

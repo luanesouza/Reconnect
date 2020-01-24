@@ -20,3 +20,17 @@ html, body {
   height: 100vh;
   background-color: rgba(247,191,180, .4);
 }
+
+#add-button {
+  background: url('https://www.logolynx.com/images/logolynx/28/28913d4a578bad63fd05c23144ded5c9.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: white;
+  width: 3rem;
+  height: 3rem;
+  top: 5%;
+  float: right;
+  margin: 0 1rem;
+  border-radius: 50%;
+}
