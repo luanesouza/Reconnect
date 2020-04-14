@@ -8,11 +8,10 @@ import AppointmentForm from './AppointmentForm';
 
 function UserProfile(props){
   return(
-    <div>
+    <main>
       <UserHeader handleRedirect={props.handleRedirect} />
-     <div id="forest-bg">
-      <div className="AppointmentList">
-        <AppointmentList
+     <div >
+      <AppointmentList
         appointments={props.appointments}
         cancelAppointment={props.cancelAppointment}
         date={props.date}
@@ -21,9 +20,8 @@ function UserProfile(props){
         modalAppointment={props.modalAppointment}
         rescheduleAppointment={props.rescheduleAppointment}
         handleChange={props.handleChange}/>
-      </div>
     </div>
-  </div>
+  </main>
 )}
 
 export default withRouter(UserProfile);

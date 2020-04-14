@@ -1,7 +1,7 @@
 import axios from 'axios';
-
+// https://dry-oasis-20600.herokuapp.com
 const api = axios.create({
-  baseURL: 'https://dry-oasis-20600.herokuapp.com'
+  baseURL: 'http://localhost:3000'
 });
 
 const updateToken = (token) => {

@@ -1,5 +1,6 @@
-
+import axios from 'axios';
 import { api, updateToken } from './api-helper';
+const BASE_URL = 'http://localhost:3000'
 
 const loginUser = async (data) => {
   try {
@@ -14,7 +15,7 @@ const loginUser = async (data) => {
 
 const getTherapists = async () => {
   try {
-    const allTherapists = await api('/therapists')
+    const allTherapists = await axios(`${BASE_URL}/therapists`)
     return allTherapists.data;
   }catch(e){
     console.error(e.message);
@@ -23,7 +24,7 @@ const getTherapists = async () => {
 
 const getOneTherapist = async (therapistId) => {
   try {
-    const therapist = await api(`therapists/${therapistId}`)
+    const therapist = await axios(`${BASE_URL}therapists/${therapistId}`)
     return therapist.data
   }catch(e){
     console.error(e.message);
@@ -61,7 +62,7 @@ const getUserAppointments = async () => {
 const createUserAppointment = async (appointment) => {
   console.log(appointment);
   try {
-    const resp = await api.post(`/users/1/appointments`, appointment)
+    const resp = await axios.post(`${BASE_URL}/users/1/appointments`, appointment)
     return resp.data
   } catch(e) {
     console.log(e);
@@ -71,7 +72,7 @@ const createUserAppointment = async (appointment) => {
 
 const editUserAppointment = async (appointmentId, appointment) => {
   try {
-    const resp = await api.put(`/users/1/appointments/${appointmentId}`, appointment);
+    const resp = await axios.put(`${BASE_URL}/users/1/appointments/${appointmentId}`, appointment);
     return resp.data
   } catch(e) {
     console.log(e);
@@ -81,7 +82,7 @@ const editUserAppointment = async (appointmentId, appointment) => {
 
 const deleteUserAppointment = async (appointmentId) => {
   try {
-    const resp = await api.delete(`/users/1/appointments/${appointmentId}`)
+    const resp = await axios.delete(`${BASE_URL}/users/1/appointments/${appointmentId}`)
     return resp.data
   } catch(e) {
     console.log(e);

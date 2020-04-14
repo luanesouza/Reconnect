@@ -5,6 +5,9 @@
 
 html {
   height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  font-weight: lighter;
+  background-image: linear-gradient(#13C4A3, #6A7FDB);
 }
 
 a {
@@ -68,6 +71,7 @@ a {
    padding: 3%;
    width: 70vw;
    margin: 10px;
+   cursor: pointer!important;
  }
 
 .App {
@@ -75,10 +79,6 @@ a {
   background-color: #FDFDFF;
   color: #253031;
   height: 100vh; */
-}
-
-button{
-  cursor: pointer!important;
 }
 /*
 .text{
@@ -132,7 +132,7 @@ form > label {
   padding-top: 2vh;
   margin-top: 5vh;
   color: white;
-  weight: 700;
+  font-weight: 700;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -141,146 +141,67 @@ form > label {
 }
 
 
-.RegisterForm{
-  padding-top: 2em;
-  background-image: url("https://www.muralswallpaper.com/app/uploads/white-green-marble-textures-plain-820x532.jpg");
-  position: absolute;
-  right: 10em;
-  text-align: center;
-  border: .3em solid rgba(152,223,175, .4);
-  border-radius: 1em;
-  background-color: rgb(245,245,245);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 35em;
-  height: 36em;
-  box-shadow: 5px 9px #888888;
-  animation-name: registerform;
-  animation-duration: 1.5s;
-  /* animation-iteration-count: infinite; */
-}
+/* -------------------- */
 
-@keyframes registerform {
-  0% { right: -15em; opacity: 0;}
-    100% { right: 10em; opacity: 1;}
-}
-
-.hero-img{
-  background-image: url("https://markdejesus.com/wp-content/uploads/2014/06/Hands-Holding-Ipad.jpg");
-  min-height: 45em;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-.image-welcome-page{
-  margin: 0;
-}
-
-/* iframe{
-  padding-left: 37em !important;
-  height:130%;
-  width: 110%;
-  border-radius: 1em;
-} */
-
-.iframe{
-  position: absolute;
-  background-image: url("https://gph.is/g/ZPROqrE");
-  height: 27.5em;
-  width: 39em;
-  margin-left: 33em;
-  margin-top: 10em;
-  transform: rotate(-1deg);
-}
-
-.shade-over-hero-img{
-  padding: 4em 4em;
-  min-height: 45em;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  background-color: rgba(255,255,255, .7)
-}
-
-.register-h1{
-  font-size: 1.4em;
-  padding-top: 2em;
-  margin: 1em;
-}
-
-.register-input{
-  width: 26em;
-  height: 3em;
-  padding: 1em;
-  margin: .5%;
-  font-family: 'Barlow', sans-serif;
-  font-weight: bold;
-  border-radius: 0.7em;
-  border-color: #98DFAF;
-}
-
-.welcome-p{
-  font-size: 2em;
-  font-weight: bolder;
-  position: absolute;
-  float: left;
-  text-align: justify;
-  padding: 2em;
-  line-height: 1.4em;
-}
-
-.Header{
+.HeaderMobile {
+  background-color: inherit;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border: 1px solid rgba(152,223,175, .8);
-  padding-bottom: 1em;
-  padding-top: 1.5em;
+  justify-content: space-between;
+  height: 15vh;
+  padding: 7vh 2vh;
+  flex-wrap: wrap;
 }
 
-.login-logout-header{
-  font-size: 1.5em;
-  color: #34623F;
+.HeaderMobile > h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: lighter;
 }
 
-.logo{
-  width: 3em;
-  height: 3em;
+.menu > img {
+  width: 7vw;
 }
 
-.logo-header{
+.dropdown-menu {
+  /* position: absolute; */
+  align-self: flex-end;
+  background-color: black !important;
+  width: 25vw;
+  height: auto;
+  color: white;
   text-align: center;
+  float:right;
+  padding: 4vw;
+  margin-right: 3vh;
 }
 
-.reconnectTitle{
-  font-size: 1em;
-  color: #34623F;
-}
-
-.register-button{
-  margin: 1.5em;
-  height: 3em;
-  width: 9em;
-  border-radius: 1em;
-  font-family: 'Barlow', sans-serif;
-  font-size: .7em;
-  border-color: #98DFAF;
-  background-color: rgba(152,223,175, .3);
-  box-shadow: 2px 3px #888888;
-  background-color: rgba(152,223,175, .3);
-}
-
-.already-have-account{
-  color: grey;
-  font-size: 1.2em;
+.menu {
   border: none;
   background: none;
-  font-weight: 600;
-  font-family: 'Barlow', sans-serif;
+  width: inherit;
+  padding: 0;
+  margin: 5px;
 }
+
+/* --------------------------- */
+
+.appointment-card {
+  background-color: green;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.appointment-card > img {
+  border-radius: 50%;
+  height: 20vh;
+  weight: 20vw;
+  margin: 15px;
+}
+
+/* .doctor-info {
+  align
+} */
 
 /* LOGIN FORM */
 
@@ -328,7 +249,7 @@ form > label {
   height: 3em;
   width: 9em;
   border-radius: 1em;
-  font-family: 'Barlow', sans-serif;
+  /* font-family: 'Barlow', sans-serif; */
   font-size: .7em;
   border-color: #98DFAF;
   box-shadow: 2px 3px #888888;
@@ -464,7 +385,7 @@ ziggeoplayer{
   height: 3em;
   width: 9em;
   border-radius: 1em;
-  font-family: 'Barlow', sans-serif;
+  /* font-family: 'Barlow', sans-serif; */
   font-weight: 600;
   font-size: .7em;
   border-color: #98DFAF;
@@ -534,10 +455,10 @@ ziggeoplayer{
   height: 2em;
   border: 2px solid white;
   border-radius: 1em;
-  font-family: 'Barlow', sans-serif;
+  /* font-family: 'Barlow', sans-serif; */
   font-size: .7em;
   /* border-color: #98DFAF; */
-  font-weight: 600;
+  /* font-weight: 600; */
   background-color: rgba(241, 169, 160, 1);
   box-shadow: 1px 2px #888888;
 }
@@ -547,10 +468,10 @@ ziggeoplayer{
   border: 2px solid white;
   margin-top: 1.1em;
   border-radius: 1em;
-  font-family: 'Barlow', sans-serif;
+  /* font-family: 'Barlow', sans-serif; */
   font-size: .7em;
   /* border-color: #98DFAF; */
-  font-weight: 600;
+  /* font-weight: 600; */
   background-color: rgba(200, 247, 197, 1);
   box-shadow: 1px 2px #888888;
 }

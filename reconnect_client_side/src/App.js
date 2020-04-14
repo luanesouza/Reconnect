@@ -313,15 +313,15 @@ class App extends Component {
 
         <Route exact path='/profile' render={(props) => (
             <UserProfile
-            appointments={this.state.appointments}
-            cancelAppointment={this.cancelAppointment}
-            populateForm={this.populateForm}
-            date={this.state.date}
-            time={this.state.time}
-            rescheduleAppointment={this.rescheduleAppointment}
-            modalAppointment={this.state.modalAppointment}
-            handleChange={this.handleChange}
-            handleRedirect={this.handleRedirect}/>
+              appointments={this.state.appointments}
+              cancelAppointment={this.cancelAppointment}
+              populateForm={this.populateForm}
+              date={this.state.date}
+              time={this.state.time}
+              rescheduleAppointment={this.rescheduleAppointment}
+              modalAppointment={this.state.modalAppointment}
+              handleChange={this.handleChange}
+              handleRedirect={this.handleRedirect}/>
         )}/>
         <Route exact path='/therapists' render={(props) => (
             <TherapistList
