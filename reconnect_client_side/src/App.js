@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import './App.css';
-import UserRegisterForm from './components/UserRegisterForm';
+import HomePage from './components/HomePage';
 import UserLoginForm from './components/UserLoginForm';
 import { registerUser,
         loginUser,
@@ -17,58 +17,41 @@ import TherapistList from './components/TherapistList'
 import TherapistProfile from './components/TherapistProfile'
 import Modal from './components/Modal';
 import AppointmentForm from './components/AppointmentForm';
+import UserRegisterForm from './components/UserRegisterForm';
 
 
 class App extends Component {
-  constructor(){
-    super()
-
-    this.state = {
-      therapist: '',
-      appointments: [],
-      therapists: [],
-      id: '',
-      date: new Date(),
-      time: '',
-      therapist_id:'',
-      therapist_image: '',
-      therapist_last_name: '',
-      therapist_first_name: '',
-      education: '',
-      specialty: '',
-      user_id: 1,
-      user_first_name: '',
-      user_last_name: '',
-      user_email: '',
-      password: '',
-      modalOpen: false,
-      modalAppointment: false,
-      apiTherapists: ''
-    }
-    this.handleLogin = this.handleLogin.bind(this)
-    this.handleChange = this.handleChange.bind(this)
-    this.handleRegister = this.handleRegister.bind(this)
-    this.handleLogout = this.handleLogout.bind(this)
-    this.getAppointments = this.getAppointments.bind(this)
-    this.getAllTherapists = this.getAllTherapists.bind(this)
-    this.getTherapist = this.getTherapist.bind(this)
-    this.toggleModal = this.toggleModal.bind(this);
-    this.createAppointment = this.createAppointment.bind(this);
-    this.rescheduleAppointment = this.rescheduleAppointment.bind(this);
-    this.getInfoAppointment = this.getInfoAppointment.bind(this);
-    this.cancelAppointment = this.cancelAppointment.bind(this);
-    this.populateForm = this.populateForm.bind(this);
-    this.handleCalendar = this.handleCalendar.bind(this);
-    this.handleRedirect = this.handleRedirect.bind(this);
+  state = {
+    therapist: '',
+    appointments: [],
+    therapists: [],
+    id: '',
+    date: new Date(),
+    time: '',
+    therapist_id:'',
+    therapist_image: '',
+    therapist_last_name: '',
+    therapist_first_name: '',
+    education: '',
+    specialty: '',
+    user_id: 1,
+    user_first_name: '',
+    user_last_name: '',
+    user_email: '',
+    password: '',
+    modalOpen: false,
+    modalAppointment: false,
+    apiTherapists: ''
   }
 
-  toggleModal() {
+
+  toggleModal = () => {
     this.setState(prevState => ({
       modalOpen: !prevState.modalOpen
     }));
   }
 
-  handleLogout(e) {
+  handleLogout = (e) => {
   e.preventDefault();
   this.setState({
       user_first_name: '',
@@ -79,14 +62,14 @@ class App extends Component {
   this.props.history.push('/');
   }
 
-  handleChange(e) {
+  handleChange = (e)  => {
     const { name, value } = e.target;
     this.setState({
       [name]: value
     })
   };
 
-  async handleRegister(ev) {
+  handleRegister = async (ev)  => {
     ev.preventDefault();
     const { user_first_name, user_last_name, user_email, password } = this.state
     if ( user_first_name && user_last_name
@@ -118,7 +101,7 @@ class App extends Component {
     }
   };
 
-  async handleLogin(ev) {
+  handleLogin = async (ev)  => {
     ev.preventDefault();
     const { user_email, password } = this.state;
     if (user_email && password) {
@@ -143,16 +126,15 @@ class App extends Component {
     };
   };
 
-  async getAppointments(){
+  getAppointments = async () => {
     const appointments = await getUserAppointments()
-    console.log(appointments);
 
     this.setState({
       appointments
     })
   }
 
-  async getAllTherapists(){
+  getAllTherapists = async () => {
     const therapists = await getTherapists()
 
     this.setState({
@@ -160,7 +142,7 @@ class App extends Component {
     })
   }
 
-  async getTherapist(therapistId){
+  getTherapist = async (therapistId) => {
     const therapist = await getOneTherapist(therapistId)
     console.log(therapist);
     this.setState({
@@ -175,14 +157,14 @@ class App extends Component {
     this.props.history.push('/therapist');
   }
 
-  async getInfoAppointment(){
+  getInfoAppointment = async () => {
     this.setState(prevState => ({
       modalAppointment:!prevState.modalAppointment
 
     }));
   };
 
-  async createAppointment(e){
+  createAppointment = async (e) => {
     e.preventDefault();
     const data = {
       date: this.state.date,
@@ -212,7 +194,7 @@ class App extends Component {
     })
   }
 
-  async cancelAppointment(appointmentId){
+  cancelAppointment = async (appointmentId) => {
     try{
       const resp = await deleteUserAppointment(appointmentId)
       const appointments = await getUserAppointments();
@@ -225,7 +207,7 @@ class App extends Component {
     }
   }
 
-  async populateForm(appointment){
+  populateForm = async (appointment) => {
     this.setState(prevState => ({
       modalAppointment: !prevState.modalAppointment
     }))
@@ -243,7 +225,7 @@ class App extends Component {
     }
   }
 
-  async rescheduleAppointment(e){
+  rescheduleAppointment = async (e) => {
     e.preventDefault();
     try{
       const data = {
@@ -266,7 +248,7 @@ class App extends Component {
   })
 }
 
-  handleRedirect(){
+  handleRedirect = () => {
     console.log('clicked');
     this.setState({
       time: '',
@@ -277,14 +259,14 @@ class App extends Component {
     this.props.history.push('/therapists')
   }
 
-  handleCalendar(date){
+  handleCalendar = (date) => {
     this.setState(prevState => ({
         ...prevState,
         date
     }))
   }
 
-  async componentDidMount(){
+  componentDidMount = async () => {
     await this.getAppointments();
     await this.getAllTherapists();
   }
@@ -293,17 +275,7 @@ class App extends Component {
     return (
       <div className="App">
         <Route exact path ='/' render={(props) => (
-          <div>
-            <UserRegisterForm
-            {...props}
-              handleChange={this.handleChange}
-              handleSubmit={this.handleRegister}
-              first_name={this.state.first_name}
-              last_name={this.state.last_name}
-              email={this.state.email}
-              password={this.state.password}
-              closeModal={this.toggleModal}/>
-          </div>
+            <HomePage { ...props} />
         )} />
 
         <Route exact path='/scheduleAppointment' render={(props) => (
@@ -315,6 +287,20 @@ class App extends Component {
             date={this.state.date}
             time={this.state.time}
             handleCalendar={this.handleCalendar}/>
+          </div>
+        )} />
+
+        <Route exact path ='/signup' render={(props) => (
+          <div>
+            <UserRegisterForm
+            {...props}
+              handleChange={this.handleChange}
+              handleSubmit={this.handleRegister}
+              first_name={this.state.first_name}
+              last_name={this.state.last_name}
+              email={this.state.email}
+              password={this.state.password}
+              closeModal={this.toggleModal}/>
           </div>
         )} />
 

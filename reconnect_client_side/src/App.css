@@ -1,27 +1,106 @@
-* {
+*, *::after, *::before {
   margin: 0;
-
+  box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.HomePage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(#13C4A3, #6A7FDB);
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-image-text {
+  padding: 7vh;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: white;
+}
+
+.homepage-image-text > img {
+  width: 70%;
+  margin: 30px;
+  animation: appears 6s;
+}
+
+#re{
+  animation: appears 4s;
+  font-size: 4vh;
+}
+
+#connect {
+  animation: appears 2s;
+  font-size: 4vh;
+}
+
+ @keyframes appears {
+   0% {
+     opacity: 0;
+   }
+
+   100% {
+     opacity: 1;
+    }
+ }
+
+
+ a > button {
+   background-color: #D1E3DD;
+   font-size: 2.5vh;
+   font-family: 'Poppins', sans-serif;
+   border-radius: 10px;
+   padding: 3%;
+   width: 70vw;
+   margin: 10px;
+   animation: downUp 5s;
+ }
+
+ @keyframes downUp {
+   0% {
+     top: -15em;
+     /* opacity: 0; */
+   }
+   100% {
+     top: 10em;
+     /* opacity: 1; */
+   }
+ }
+
 .App {
-font-family: 'Barlow', sans-serif;
+  /* font-family: 'Barlow', sans-serif;
   background-color: #FDFDFF;
   color: #253031;
-  height: 100vh;
+  height: 100vh; */
 }
 
 button{
   cursor: pointer!important;
 }
-
+/*
 .text{
   font-family: 'Antic Didone', serif;
   font-family: 'Barlow', sans-serif;
   background-color: rgba(152,223,175, .3);
-}
+} */
+
+ .HomePage > a {
+   font-family: 'Poppins', sans-serif;
+   font-weight: 400;
+
+ }
 
 
 /* REGISTER FORM & WELCOME PAGE*/
+
 .RegisterForm{
   padding-top: 2em;
   background-image: url("https://www.muralswallpaper.com/app/uploads/white-green-marble-textures-plain-820x532.jpg");
@@ -389,9 +468,9 @@ ziggeoplayer{
   font-weight: 600;
 }
 
-span{
+/* span{
   color: #34623F;
-}
+} */
 
 .eachConsult{
   background-color: rgba(253,253,255, .5);
@@ -637,4 +716,3 @@ span{
 #contactme{
 
 }
-/*  */
