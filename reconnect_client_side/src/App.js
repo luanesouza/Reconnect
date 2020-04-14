@@ -145,16 +145,16 @@ class App extends Component {
   getTherapist = async (therapistId) => {
     const therapist = await getOneTherapist(therapistId)
     console.log(therapist);
-    this.setState({
-      therapist,
-      therapist_id:therapist.id,
-      therapist_image: therapist.therapist_image,
-      therapist_first_name: therapist.therapist_first_name,
-      therapist_last_name: therapist.therapist_last_name,
-      specialty: therapist.specialty,
-      education: therapist.education
-    })
-    this.props.history.push('/therapist');
+    // this.setState({
+    //   therapist,
+    //   therapist_id:therapist.id,
+    //   therapist_image: therapist.therapist_image,
+    //   therapist_first_name: therapist.therapist_first_name,
+    //   therapist_last_name: therapist.therapist_last_name,
+    //   specialty: therapist.specialty,
+    //   education: therapist.education
+    // })
+    // this.props.history.push('/therapist');
   }
 
   getInfoAppointment = async () => {
@@ -325,12 +325,12 @@ class App extends Component {
         )}/>
         <Route exact path='/therapists' render={(props) => (
             <TherapistList
-            getTherapist={this.getTherapist}
             therapist={this.state.therapist}
             therapists={this.state.therapists} />
         )} />
-        <Route exact path='/therapist' render={(props) => (
+        <Route exact path='/therapists/:id' render={(props) => (
             <TherapistProfile
+            getTherapist={this.getTherapist}
             therapist={this.state.therapist}
             getInfoAppointment={this.getInfoAppointment}
             handleChange={this.handleChange}

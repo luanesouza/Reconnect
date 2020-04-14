@@ -7,8 +7,8 @@ const UserLoginForm = (props) => {
 
     <div className="userForm">
        <form onSubmit={props.onSubmit}>
-       <h1> Welcome Back </h1>
-       <label name='email'> Email </label>
+        <h1> Welcome Back </h1>
+        <label name='email'> Email </label>
 
         <input
         autoComplete="off"

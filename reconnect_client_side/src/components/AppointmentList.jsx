@@ -15,17 +15,21 @@ function AppointmentList(props){
        />))
 
   return(
-    <section className="AppointmentList">
-      <p> You have {appointments.length} appointments comming up </p>
-      <section>
-       { myAppointments }
-      <section className="calendar-form">
+    <main>
+      <section className="AppointmentList">
+        <p> You have {appointments.length} appointments comming up </p>
+        { myAppointments }
+      </section>
+      {
+        props.modalAppointment
+        ?
+        <section className="calendar-form">
         <AppointmentForm handleChange={props.handleChange} handleCalendar={props.handleCalendar} handleSubmit={props.rescheduleAppointment} time={props.time} modalAppointment={props.modalAppointment}/>
-      </section>
-      </section>
-
-
-    </section>
+        </section>
+        :
+        null
+      }
+    </main>
   )
 }
 export default withRouter(AppointmentList);

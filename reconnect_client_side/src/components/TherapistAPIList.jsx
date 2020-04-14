@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import UserHeader from '../UserProfileComponents/UserHeader';
+import UserHeader from './UserHeader';
 
 function TherapistAPIList(props){
   const {apiTherapists, getTherapist} = props

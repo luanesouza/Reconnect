@@ -2,7 +2,7 @@ import React from 'react';
 import AppointmentList from './AppointmentList';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
-import UserHeader from './UserProfileComponents/UserHeader';
+import UserHeader from './UserHeader';
 import AppointmentForm from './AppointmentForm';
 
 

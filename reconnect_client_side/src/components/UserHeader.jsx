@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Logo from '../Logo';
+import Logo from './Logo';
 import { Link } from 'react-router-dom';
 
 function UserHeader(props){
@@ -10,8 +10,15 @@ function UserHeader(props){
   return(
     <div className="UserHeader">
       <section className="HeaderMobile">
-        <h2> Welcome, test </h2>
-        <button onClick={(e) => {e.preventDefault(); isMenuOpen(!open) }} 
+        {
+          props.username
+          ?
+          <h2> Welcome, ${props.username}</h2>
+          :
+          <h2></h2>
+        }
+
+        <button onClick={(e) => {e.preventDefault(); isMenuOpen(!open) }}
           className='menu'>
           <img src='https://image.flaticon.com/icons/svg/2089/2089793.svg' alt='mobile-menu'/>
         </button>
@@ -20,9 +27,9 @@ function UserHeader(props){
         open
         ?
         <section className='dropdown-menu'>
-          <p>Test</p>
-          <p>Test</p>
-          <p>Test</p>
+          <p><Link to='/therapists'>View All Therapists </Link></p>
+          <p><Link to='/profile'>View Profile </Link></p>
+          <p><Link to='/'>Logout </Link></p>
         </section>
         :
         null

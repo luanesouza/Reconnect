@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { api, updateToken } from './api-helper';
+// import { api, updateToken } from './api-helper';
 const BASE_URL = 'http://localhost:3000'
 
 const loginUser = async (data) => {
   try {
-    const loginData = await api.post(`/login`, data);
+    const loginData = await axios.post(`${BASE_URL}/login`, data);
     // updateToken(loginData.data.token);
     return loginData.data;
   } catch (e) {
@@ -24,16 +24,17 @@ const getTherapists = async () => {
 
 const getOneTherapist = async (therapistId) => {
   try {
-    const therapist = await axios(`${BASE_URL}therapists/${therapistId}`)
+    const therapist = await axios(`${BASE_URL}/therapists/${therapistId}`)
     return therapist.data
   }catch(e){
     console.error(e.message);
   }
 }
 
+
 const registerUser = async (data) => {
   try{
-    const resp = await api.post(`/users`, data);
+    const resp = await axios.post(`${BASE_URL}/users`, data);
     console.log(resp.data);
     return resp.data;
   }catch(e){
@@ -52,7 +53,7 @@ const registerUser = async (data) => {
 
 const getUserAppointments = async () => {
   try {
-    const resp = await api.get(`/users/1/appointments`)
+    const resp = await axios.get(`${BASE_URL}/users/1/appointments`)
     return resp.data;
   } catch (e) {
     console.error(e.message);
