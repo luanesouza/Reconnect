@@ -5,44 +5,39 @@ import { Link } from 'react-router-dom';
 const UserLoginForm = (props) => {
   return(
 
-    <div>
-    <Header />
-    <div className="LoginForm">
-      <h1 className="welcome-back">WELCOME BACK</h1>
+    <div className="userForm">
        <form onSubmit={props.onSubmit}>
-          <div>
-            <input
-            className="login-input"
-            placeholder="EMAIL"
-            autoComplete="off"
-            type="text"
-            onChange={props.handleChange}
-            id="email"
-            name="user_email"
-            value={props.email} />
-          </div>
+       <h1> Welcome Back </h1>
+       <label name='email'> Email </label>
 
-          <div>
-            <input
-            className="login-input"
-            placeholder="PASSWORD"
-            autoComplete="off"
-            type="password"
-            onChange={props.handleChange}
-            id="password"
-            name="password"
-            value={props.password} />
-          </div>
+        <input
+        autoComplete="off"
+        type="text"
+        onChange={props.handleChange}
+        id="email"
+        name="user_email"
+        value={props.email} />
 
-          <button
-          className="login-button"
-          onClick={props.handleSubmit}
-          type="submit">
+        <label name='password'> Password </label>
+
+        <input
+        autoComplete="off"
+        type="password"
+        onChange={props.handleChange}
+        id="password"
+        name="password"
+        value={props.password} />
+
+        <button
+        id='submitForm'
+        onClick={props.handleSubmit}
+        type="submit"
+        >
           Log In
-          </button>
-        </form>
+        </button>
+        <p id='error'>{props.error}</p>
+      </form>
     </div>
-  </div>
   )
 };
 
