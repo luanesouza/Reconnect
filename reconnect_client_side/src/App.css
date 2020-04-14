@@ -3,9 +3,16 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100vh;
+}
+
 a {
   text-decoration: none;
   color: black;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  cursor: pointer;
 }
 
 
@@ -53,7 +60,7 @@ a {
  }
 
 
- a > button {
+ button {
    background-color: #D1E3DD;
    font-size: 2.5vh;
    font-family: 'Poppins', sans-serif;
@@ -61,18 +68,6 @@ a {
    padding: 3%;
    width: 70vw;
    margin: 10px;
-   animation: downUp 5s;
- }
-
- @keyframes downUp {
-   0% {
-     top: -15em;
-     /* opacity: 0; */
-   }
-   100% {
-     top: 10em;
-     /* opacity: 1; */
-   }
  }
 
 .App {
@@ -92,14 +87,48 @@ button{
   background-color: rgba(152,223,175, .3);
 } */
 
- .HomePage > a {
-   font-family: 'Poppins', sans-serif;
-   font-weight: 400;
-
- }
-
 
 /* REGISTER FORM & WELCOME PAGE*/
+
+.userForm {
+  height: 100vh;
+  background-image: linear-gradient(#13C4A3, #6A7FDB);
+}
+
+.userForm > form {
+  display: flex;
+  flex-direction: column;
+  /* margin: auto; */
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+  width: 70vw;
+  border-radius: 10px;
+  height: 6vh;
+  background-color: inherit;
+  padding: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+form > label {
+  align-self: flex-start;
+  padding-left: 14vh;
+  padding-top: 2vh;
+  margin-top: 5vh;
+  color: white;
+  weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
+
+#submitForm {
+  margin-top: 8vh;
+}
+
 
 .RegisterForm{
   padding-top: 2em;
@@ -218,13 +247,6 @@ button{
 .reconnectTitle{
   font-size: 1em;
   color: #34623F;
-}
-
-a {
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: bolder;
-  margin: 0;
 }
 
 .register-button{

@@ -4,9 +4,7 @@ import Footer from './Footer';
 import { Link } from 'react-router-dom';
 
 const HomePage = (props) => {
-  console.log(props);
   return(
-
     <main className='HomePage'>
       <section className='homepage-image-text'>
         <img src='https://image.flaticon.com/icons/svg/1491/1491373.svg' alt='logo'/>

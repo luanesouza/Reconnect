@@ -279,7 +279,6 @@ class App extends Component {
         )} />
 
         <Route exact path='/scheduleAppointment' render={(props) => (
-          <div>
             <AppointmentForm
             {...props}
             handleChange={this.handleChange}
@@ -287,11 +286,9 @@ class App extends Component {
             date={this.state.date}
             time={this.state.time}
             handleCalendar={this.handleCalendar}/>
-          </div>
         )} />
 
         <Route exact path ='/signup' render={(props) => (
-          <div>
             <UserRegisterForm
             {...props}
               handleChange={this.handleChange}
@@ -301,11 +298,9 @@ class App extends Component {
               email={this.state.email}
               password={this.state.password}
               closeModal={this.toggleModal}/>
-          </div>
         )} />
 
         <Route exact path='/login' render={(props) => (
-          <div>
             <UserLoginForm
               {...props}
               handleChange={this.handleChange}
@@ -314,11 +309,9 @@ class App extends Component {
               password={this.state.password}
               closeModal={this.toggleModal}
               isOpen={this.state.modalOpen}/>
-          </div>
         )} />
 
         <Route exact path='/profile' render={(props) => (
-          <div>
             <UserProfile
             appointments={this.state.appointments}
             cancelAppointment={this.cancelAppointment}
@@ -329,18 +322,14 @@ class App extends Component {
             modalAppointment={this.state.modalAppointment}
             handleChange={this.handleChange}
             handleRedirect={this.handleRedirect}/>
-          </div>
         )}/>
         <Route exact path='/therapists' render={(props) => (
-          <div>
             <TherapistList
             getTherapist={this.getTherapist}
             therapist={this.state.therapist}
             therapists={this.state.therapists} />
-          </div>
         )} />
         <Route exact path='/therapist' render={(props) => (
-          <div>
             <TherapistProfile
             therapist={this.state.therapist}
             getInfoAppointment={this.getInfoAppointment}
@@ -350,7 +339,6 @@ class App extends Component {
             time={this.state.time}
             handleCalendar={this.handleCalendar}
             modalAppointment={this.state.modalAppointment}/>
-          </div>
         )} />
         <Modal
           closeModal={this.toggleModal}

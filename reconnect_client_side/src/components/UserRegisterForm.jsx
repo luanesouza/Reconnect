@@ -2,66 +2,55 @@ import React from 'react';
 
 export default function UserRegisterForm(props){
   return(
-    <form onSubmit={props.onSubmit}>
-     <div>
-        <input
-          className="register-input"
-          placeholder="NAME"
-          autoComplete="off"
-          type="text"
-          onChange={props.handleChange}
-          id="first_name"
-          name="user_first_name"
-          value={props.first_name} />
-      </div>
+    <section className='userForm'>
+      <form onSubmit={props.onSubmit}>
 
-      <div>
-        <input
-          className="register-input"
-          placeholder="LAST NAME"
-          autoComplete="off"
-          type="text"
-          onChange={props.handleChange}
-          id="last_name"
-          name="user_last_name"
-          value={props.last_name} />
-      </div>
+          <label>First Name</label>
+          <input
+            autoComplete="off"
+            type="text"
+            onChange={props.handleChange}
+            id="first_name"
+            name="user_first_name"
+            value={props.first_name} />
 
-      <div>
-        <input
-          className="register-input"
-          placeholder="EMAIL"
-          autoComplete="off"
-          type="text"
-          onChange={props.handleChange}
-          id="email"
-          name="user_email"
-          value={props.email} />
-      </div>
+          <label>Last Name</label>
+          <input
+            autoComplete="off"
+            type="text"
+            onChange={props.handleChange}
+            id="last_name"
+            name="user_last_name"
+            value={props.last_name} />
 
-      <div>
-        <input
-          className="register-input"
-          placeholder="PASSWORD"
-          autoComplete="off"
-          type="password"
-          onChange={props.handleChange}
-          id="password"
-          name="password"
-          value={props.password} />
-      </div>
+          <label>Email</label>
+          <input
+            autoComplete="off"
+            type="text"
+            onChange={props.handleChange}
+            id="email"
+            name="user_email"
+            value={props.email} />
 
-      <button
-        className="register-button"
-        onClick={props.handleSubmit}
-        type="submit"
-        >
-          Sign Up
-      </button>
+          <label>Password</label>
+          <input
+            autoComplete="off"
+            type="password"
+            onChange={props.handleChange}
+            id="password"
+            name="password"
+            value={props.password} />
 
-      <button onClick={props.closeModal} className="already-have-account">
-        Already Have An Account?
-      </button>
-    </form>
+        <button
+          id='submitForm'
+          onClick={props.handleSubmit}
+          type="submit"
+          >
+            Sign Up
+        </button>
+        <br />
+          <a href='/login'>Already Have An Account?</a>
+      </form>
+    </section>
   )
 }
