@@ -15,7 +15,6 @@ import { registerUser,
 import UserProfile from './components/UserProfile'
 import TherapistList from './components/TherapistList'
 import TherapistProfile from './components/TherapistProfile'
-import Modal from './components/Modal';
 import AppointmentForm from './components/AppointmentForm';
 import UserRegisterForm from './components/UserRegisterForm';
 
@@ -41,7 +40,6 @@ class App extends Component {
     password: '',
     modalOpen: false,
     modalAppointment: false,
-    apiTherapists: ''
   }
 
 
@@ -103,12 +101,12 @@ class App extends Component {
 
   handleLogin = async (ev)  => {
     ev.preventDefault();
-    const { user_email, password } = this.state;
-    if (user_email && password) {
+    const user_email = 'user@gmail.com';
+    const password = 'aaaaa'
+    localStorage.username = 'test'
       try {
-        const resp = await loginUser(this.state)
+        const resp = await loginUser({user_email, password})
         if(resp) {
-          console.log(resp);
           this.setState({
               user_email: '',
               password:''
@@ -120,9 +118,6 @@ class App extends Component {
         }
       } catch(e) {
         console.log(e, 'Someting went wrong...');
-      }
-    } else {
-      console.log('please put both a username and password');
     };
   };
 
@@ -140,21 +135,6 @@ class App extends Component {
     this.setState({
       therapists
     })
-  }
-
-  getTherapist = async (therapistId) => {
-    const therapist = await getOneTherapist(therapistId)
-    console.log(therapist);
-    // this.setState({
-    //   therapist,
-    //   therapist_id:therapist.id,
-    //   therapist_image: therapist.therapist_image,
-    //   therapist_first_name: therapist.therapist_first_name,
-    //   therapist_last_name: therapist.therapist_last_name,
-    //   specialty: therapist.specialty,
-    //   education: therapist.education
-    // })
-    // this.props.history.push('/therapist');
   }
 
   getInfoAppointment = async () => {
@@ -319,7 +299,6 @@ class App extends Component {
               date={this.state.date}
               time={this.state.time}
               rescheduleAppointment={this.rescheduleAppointment}
-              modalAppointment={this.state.modalAppointment}
               handleChange={this.handleChange}
               handleRedirect={this.handleRedirect}/>
         )}/>
@@ -330,19 +309,14 @@ class App extends Component {
         )} />
         <Route exact path='/therapists/:id' render={(props) => (
             <TherapistProfile
-            getTherapist={this.getTherapist}
             therapist={this.state.therapist}
             getInfoAppointment={this.getInfoAppointment}
             handleChange={this.handleChange}
             handleSubmit={this.createAppointment}
             date={this.state.date}
             time={this.state.time}
-            handleCalendar={this.handleCalendar}
-            modalAppointment={this.state.modalAppointment}/>
+            handleCalendar={this.handleCalendar}/>
         )} />
-        <Modal
-          closeModal={this.toggleModal}
-          isOpen={this.state.modalOpen} />
       </div>
     );
   }

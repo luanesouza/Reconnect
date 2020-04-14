@@ -3,12 +3,12 @@ import moment from 'moment';
 
 
 export default function Appointment({appointment, populateForm, cancelAppointment}) {
-
+  
   return (
     <div className="appointment-card" key={appointment.id}>
-      <img id='therapist-icon' src='https://as2.ftcdn.net/jpg/02/85/48/33/500_F_285483373_SFvWkkyXvib9uKSysjFSmtC7GC878cjR.jpg' alt="therapist"/>
+      <img id='therapist-icon' src={appointment.therapist_image} alt="therapist"/>
       <section className='doctor-info'>
-        <p>Dr. </p> <span> kahsuis haihuhu{appointment.therapist_first_name} {appointment.therapist_last_name}</span>
+        <p>Dr. </p> <span> {appointment.therapist_first_name} {appointment.therapist_last_name}</span>
         <p>Appointment Date:</p><span>{moment(appointment.date).format("MMM Do YYYY")}</span>
         <p>Appointment Time:</p> <span>{appointment.time}</span>
       </section>

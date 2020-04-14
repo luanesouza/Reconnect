@@ -4,7 +4,6 @@
 }
 
 html {
-  height: 100vh;
   font-family: 'Poppins', sans-serif;
   font-weight: lighter;
   background-image: linear-gradient(#13C4A3, #6A7FDB);
@@ -153,7 +152,7 @@ form > label {
 }
 
 .UserHeader {
-  margin-bottom: 8vh;
+  margin-bottom: 4vh;
 }
 
 .HeaderMobile > h2 {
@@ -171,7 +170,7 @@ form > label {
   align-self: flex-end;
   background-color: black !important;
   width: 38vw;
-  height: 15vh;
+  height: 10vh;
   float:right;
   padding: 4vw;
   margin-right: 3vh;
@@ -325,5 +324,7 @@ form > label {
   border-radius: 10px;
 }
 
-
+.react-calendar {
+  width: inherit;
+}
 /* ------------ */

@@ -3,8 +3,7 @@ import { withRouter } from 'react-router';
 import UserHeader from './UserHeader';
 import { Link } from 'react-router-dom';
 import AppointmentForm from './AppointmentForm';
-import ContactMe from './ContactMe';
-import { getOneTherapist, createUserAppointment } from '../services/users.js';
+import { getOneTherapist, createUserAppointment, getUserAppointments } from '../services/users.js';
 
 function TherapistProfile(props){
   const [therapist, setInfo] = useState('')

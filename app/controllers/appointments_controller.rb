@@ -35,8 +35,7 @@ class AppointmentsController < ApplicationController
 
     if params[:therapist_id]
       @therapist = Therapist.find(params[:therapist_id])
-      @appointment = Appointment.new(appointment_params)
-
+      @appointment = Appointment.create(appointment_params)
       if @appointment.save
         render json: @appointment, status: :created
       else
@@ -44,8 +43,7 @@ class AppointmentsController < ApplicationController
       end
     else params[:user_id]
       @user = User.find(params[:user_id])
-      @appointment = Appointment.new(appointment_params)
-
+      @appointment = Appointment.create(appointment_params)
       if @appointment.save
         render json: @appointment, status: :created, location: @appointment
       else

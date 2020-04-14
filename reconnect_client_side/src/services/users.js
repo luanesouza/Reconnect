@@ -61,7 +61,7 @@ const getUserAppointments = async () => {
 }
 
 const createUserAppointment = async (appointment) => {
-  console.log(appointment);
+
   try {
     const resp = await axios.post(`${BASE_URL}/users/1/appointments`, appointment)
     return resp.data

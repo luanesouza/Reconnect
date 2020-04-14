@@ -9,11 +9,11 @@
 Therapist.destroy_all()
 
 therapist = Therapist.create([
-    {therapist_first_name: 'Penguin',
+    {therapist_first_name: 'Noah',
     therapist_last_name: 'McCarrol',
     bio: 'I opened my first practice in the Medical Arts Building at Northwest Hospital.  I practiced there over a year before moving to my current office at 7201 5th Avenue NE.
     While at Northwest, I was invited by Bill Turska N.D. in Mist, Oregon to come and help him.  He was my first mentor.  He was an old-timey Naturopath that had a history of incredible cures.  I would work with him on Mondays, Wednesdays, and Saturdays, and at my practice in Seattle on Tuesdays, Thursdays, and Fridays.  One night when we had finished working with clients, Dr. Turska and I stayed up and talked for a long time into the night.  When I woke up the next morning, I felt different, like I was no longer a young Doc working with a mentor but two colleagues working together.  It wasn\'t his words to me, it was something else.  He would talk about how he worked on patients through the ethers, and I think he worked on me.',
-    therapist_email: 'penguin@gmail.com',
+    therapist_email: 'lauren@gmail.com',
     therapist_image: 'https://as1.ftcdn.net/jpg/02/85/47/84/500_F_285478435_lYaLSqd9C8ApI0Fl1XROLNQ4PqUHUij6.jpg',
     therapist_password_digest: 'idkidkidk',
     location: 'Greater New York',
@@ -124,9 +124,9 @@ therapist = Therapist.create([
      ])
 
 users = User.create([
-  {user_first_name: 'shirin',
+  {user_first_name: 'user',
    user_last_name: 'anlen',
-   user_email: 'shiring@gmail.com',
+   user_email: 'user@gmail.com',
    user_password_digest: 'aaaaa'
    },
   {user_first_name: 'anna',
@@ -150,6 +150,8 @@ users = User.create([
    user_password_digest: 'aaaaaa'}])
 
 consult = Appointment.create({date: '09/02/2019', time: '01:30 PM', user_id: 1, therapist_id: 1})
+consult1 = Appointment.create({date: '09/02/2020', time: '01:30 PM', user_id: 1, therapist_id: 2})
+consult2 = Appointment.create({date: '09/02/2020', time: '01:30 PM', user_id: 1, therapist_id: 3})
 # consult1 = Appointment.create({date: '06/02/2019', time: '01:30 PM', user_id: 3, therapist_id: 1})
 # consult2 = Appointment.create({date: '05/02/2019', time: '01:30 PM', user_id: 2, therapist_id: 2})
 # consult3 = Appointment.create({therapist_first_name: '', therapist_last_name: '', therapist_image: 'http://www.carmelstudiosphotography.com/wp-content/gallery/professional-headshots/Professional-Headshot-6.jpg', date: '04/27/2019', time: '01:30 PM', user_id: 1, therapist_id: 1})
