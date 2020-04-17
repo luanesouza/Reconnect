@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 const UserLoginForm = (props) => {
+  let isMobile = window.innerWidth < 768;
   return(
 
     <div className="userForm">
@@ -27,14 +28,21 @@ const UserLoginForm = (props) => {
 
         <button
         id='submitForm'
-        onClick={props.handleSubmit}
+        onClick={(evt) => { props.handleSubmit(evt); props.history.push('/profile')}}
         type="submit"
         >
           Log In
         </button>
+        {
+          isMobile
+          ?
+          <a href='/signup'>Join Us</a>
+          :
+          null
+        }
       </form>
     </div>
   )
 };
 
-export default UserLoginForm;
+export default withRouter(UserLoginForm);

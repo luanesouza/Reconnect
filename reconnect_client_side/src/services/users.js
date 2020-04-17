@@ -8,7 +8,7 @@ const loginUser = async (data) => {
     // updateToken(loginData.data.token);
     return loginData.data;
   } catch (e) {
-    console.log(e);
+    console.error(e);
     return false
   }
 }
@@ -35,21 +35,12 @@ const getOneTherapist = async (therapistId) => {
 const registerUser = async (data) => {
   try{
     const resp = await axios.post(`${BASE_URL}/users`, data);
-    console.log(resp.data);
+    console.error(resp.data);
     return resp.data;
   }catch(e){
     console.error(e.message);
   }
 };
-// const getTherapists = async () => {
-//   try {
-//     const resp = await api.get(`/therapists`)
-//     return resp.data;
-//   } catch(e) {
-//     console.log(e);
-//     return false
-//   }
-// }
 
 const getUserAppointments = async () => {
   try {
@@ -66,7 +57,7 @@ const createUserAppointment = async (appointment) => {
     const resp = await axios.post(`${BASE_URL}/users/1/appointments`, appointment)
     return resp.data
   } catch(e) {
-    console.log(e);
+    console.error(e);
     return false;
   }
 }
@@ -76,7 +67,7 @@ const editUserAppointment = async (appointmentId, appointment) => {
     const resp = await axios.put(`${BASE_URL}/users/1/appointments/${appointmentId}`, appointment);
     return resp.data
   } catch(e) {
-    console.log(e);
+    console.error(e);
     return false;
   }
 }
@@ -86,7 +77,7 @@ const deleteUserAppointment = async (appointmentId) => {
     const resp = await axios.delete(`${BASE_URL}/users/1/appointments/${appointmentId}`)
     return resp.data
   } catch(e) {
-    console.log(e);
+    console.error(e);
     return false
   }
 }

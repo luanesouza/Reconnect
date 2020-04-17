@@ -7,7 +7,6 @@ import UserLoginForm from './components/UserLoginForm';
 import { registerUser,
         loginUser,
         getTherapists,
-        getOneTherapist,
         getUserAppointments,
         createUserAppointment,
         editUserAppointment,
@@ -80,8 +79,7 @@ class App extends Component {
           password: this.state.password
         }
         const data = await registerUser(newUser);
-        console.log(this.state);
-        console.log(data);
+
         this.setState({
             user_first_name: '',
             user_last_name: '',
@@ -90,20 +88,21 @@ class App extends Component {
         })
         this.props.history.push(`/profile`);
       } catch (e) {
-        console.log(e, 'Something went wrong...');
+        console.error(e, 'Something went wrong...');
       }
     } else {
-      console.log('please fill out form');
+      console.error('please fill out form');
       // logic works to not allow partially filled out forms to dispatch server call
       // need to know conditional render "please fill out form" as html if failure
     }
   };
 
   handleLogin = async (ev)  => {
+    console.log('logging in');
     ev.preventDefault();
     const user_email = 'user@gmail.com';
     const password = 'aaaaa'
-    localStorage.username = 'test'
+    localStorage.username = 'user'
       try {
         const resp = await loginUser({user_email, password})
         if(resp) {
@@ -113,11 +112,11 @@ class App extends Component {
           })
           this.props.history.push(`/profile`);
         } else {
-          console.log('wrong username or password');
+          console.error('wrong username or password');
           // this needs user prompt so they can understand why login failed
         }
       } catch(e) {
-        console.log(e, 'Someting went wrong...');
+        console.error(e, 'Someting went wrong...');
     };
   };
 
@@ -144,34 +143,14 @@ class App extends Component {
     }));
   };
 
-  createAppointment = async (e) => {
-    e.preventDefault();
-    const data = {
-      date: this.state.date,
-      time: this.state.time,
-      therapist_id:this.state.therapist_id,
-      therapist_image: this.state.therapist_image ,
-      user_id: 1,
-      therapist_first_name: this.state.therapist_first_name,
-      therapist_last_name: this.state.therapist_last_name
-    }
-    const appointment = await createUserAppointment(data)
+  createAppointment = async (appointment) => {
+    const data = await createUserAppointment(appointment)
+
     this.setState({
-      date: '',
-      time: ''
+      appointments: [... this.state.appointments, appointment],
+
     })
     this.props.history.push('/profile')
-    const appointments = await getUserAppointments();
-    this.setState({
-      appointments,
-      modalAppointment: false,
-      date: '',
-      time: '',
-      therapist_id:'',
-      therapist_image: '',
-      therapist_first_name: '',
-      therapist_last_name: '',
-    })
   }
 
   cancelAppointment = async (appointmentId) => {
@@ -180,7 +159,8 @@ class App extends Component {
       const appointments = await getUserAppointments();
 
       this.setState({
-        appointments
+        appointments,
+        modalAppointment: false
       })
     }catch(e){
       console.error(e.message);
@@ -188,11 +168,11 @@ class App extends Component {
   }
 
   populateForm = async (appointment) => {
+
     this.setState(prevState => ({
       modalAppointment: !prevState.modalAppointment
     }))
-    console.log(this.state.modalAppointment);
-    console.log(appointment);
+
     try{
     this.setState({
       date: appointment.date,
@@ -214,7 +194,7 @@ class App extends Component {
       }
       await editUserAppointment(this.state.id, data)
   } catch(e){
-    console.log(e.message);
+    console.error(e.message);
   }
   this.setState({
     time: '',
@@ -222,14 +202,13 @@ class App extends Component {
   })
   const appointments = await getUserAppointments();
     const newAppointment = appointments.sort();
-    console.log(appointments);
     this.setState({
       appointments: newAppointment
   })
 }
 
   handleRedirect = () => {
-    console.log('clicked');
+
     this.setState({
       time: '',
       therapist_id: '',
@@ -255,7 +234,15 @@ class App extends Component {
     return (
       <div className="App">
         <Route exact path ='/' render={(props) => (
-            <HomePage { ...props} />
+            <HomePage { ...props}
+              handleChange={this.handleChange}
+              handleSubmit={this.handleRegister}
+              first_name={this.state.first_name}
+              last_name={this.state.last_name}
+              email={this.state.email}
+              password={this.state.password}
+              closeModal={this.toggleModal}
+              />
         )} />
 
         <Route exact path='/scheduleAppointment' render={(props) => (
@@ -300,12 +287,16 @@ class App extends Component {
               time={this.state.time}
               rescheduleAppointment={this.rescheduleAppointment}
               handleChange={this.handleChange}
-              handleRedirect={this.handleRedirect}/>
+              handleRedirect={this.handleRedirect}
+              therapist={this.state.therapist}
+              modalAppointment={this.state.modalAppointment}
+              therapists={this.state.therapists}/>
         )}/>
         <Route exact path='/therapists' render={(props) => (
             <TherapistList
             therapist={this.state.therapist}
-            therapists={this.state.therapists} />
+            therapists={this.state.therapists}
+            createNewAppointment={() => this.createNewAppointment}/>
         )} />
         <Route exact path='/therapists/:id' render={(props) => (
             <TherapistProfile

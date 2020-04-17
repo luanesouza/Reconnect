@@ -1,10 +1,13 @@
 import React from 'react';
 
 export default function UserRegisterForm(props){
+
+  let isMobile = window.innerWidth < 768;
+
   return(
     <section className='userForm'>
       <form onSubmit={props.onSubmit}>
-
+          <h1> Join Us </h1>
           <label>First Name</label>
           <input
             autoComplete="off"
@@ -49,7 +52,13 @@ export default function UserRegisterForm(props){
             Sign Up
         </button>
         <br />
+        {
+          isMobile
+          ?
           <a href='/login'>Already Have An Account?</a>
+          :
+          null
+        }
       </form>
     </section>
   )

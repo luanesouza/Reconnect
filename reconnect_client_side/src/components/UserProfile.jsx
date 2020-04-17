@@ -1,16 +1,15 @@
-import React from 'react';
-import AppointmentList from './AppointmentList';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router';
+import AppointmentList from './AppointmentList';
 import UserHeader from './UserHeader';
-import AppointmentForm from './AppointmentForm';
 
 
 function UserProfile(props){
+
   return(
-    <main>
+    <main className='UserProfile'>
       <UserHeader handleRedirect={props.handleRedirect} />
-     <div >
+
       <AppointmentList
         appointments={props.appointments}
         cancelAppointment={props.cancelAppointment}
@@ -20,8 +19,7 @@ function UserProfile(props){
         modalAppointment={props.modalAppointment}
         rescheduleAppointment={props.rescheduleAppointment}
         handleChange={props.handleChange}/>
-    </div>
+
   </main>
 )}
-
 export default withRouter(UserProfile);

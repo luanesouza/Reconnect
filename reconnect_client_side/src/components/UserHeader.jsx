@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom';
 function UserHeader(props){
   const [open, isMenuOpen] = useState(false)
   const currentPath = window.document.location.pathname;
-  console.log();
   return(
     <div className="UserHeader">
       <section className="HeaderMobile">
         {
-          localStorage.username
+          localStorage.username && currentPath === '/profile'
           ?
           <h2> Welcome, {localStorage.username}</h2>
           :

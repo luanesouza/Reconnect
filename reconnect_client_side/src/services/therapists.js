@@ -8,6 +8,6 @@ const registerUser = async (data) => {
     updateToken(loginData.data.token);
     return loginData.data
   } catch (e) {
-    console.log(e);
+    console.error(e);
   }
 }

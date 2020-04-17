@@ -9,9 +9,9 @@ function AppointmentForm(props){
   if (props.modalAppointment === false) {
     return null;
   }
+
   return(
   <form  onSubmit={props.handleSubmit}>
-
   <Calendar name='date' onChange={props.handleCalendar} value={props.date}/>
     <section className='timefield'>
        <TextField
@@ -31,6 +31,5 @@ function AppointmentForm(props){
       <button className="schedule-button" onClick={props.handleSubmit}> Schedule </button>
     </section>
    </form>
- )
-}
+ )}
 export default withRouter(AppointmentForm);

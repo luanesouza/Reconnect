@@ -1,20 +1,24 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { withRouter, Route } from 'react-router';
 import UserHeader from './UserHeader';
 import Therapist from './Therapist';
+import TherapistProfile from './TherapistProfile';
 
 function TherapistList(props){
+
   const {therapists, getTherapist} = props
   return(
-    <div>
+    <section className='TherapistListClass'>
      <UserHeader />
-      <div className="therapistList">
-       <br/>
+      <section className="therapistList">
        {therapists.map(therapist => (
-        <Therapist getTherapist={getTherapist} therapist={therapist}/>
+        <Therapist
+          getTherapist={getTherapist}
+          therapist={therapist}
+          />
       ))}
-      </div>
-    </div>
+      </section>
+    </section>
  )
 }
 

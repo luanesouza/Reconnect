@@ -6,8 +6,10 @@ import AppointmentForm from './AppointmentForm';
 import { getOneTherapist, createUserAppointment, getUserAppointments } from '../services/users.js';
 
 function TherapistProfile(props){
+
   const [therapist, setInfo] = useState('')
   const [open, toggleModal] = useState(false)
+
   const [state, setState] = useState({
     date: new Date(),
     time: '07:30',
@@ -18,25 +20,23 @@ function TherapistProfile(props){
     therapist_last_name: therapist.therapist_last_name,
   })
 
-
   useEffect( () => {
     therapistInfo()
   }, [])
 
 
-  const handleChange = (evt) => {
+const handleChange = (evt) => {
 
-    const value = evt.target.value;
-    setState({
-      ...state,
-      [evt.target.name]: value
-    });
+  const value = evt.target.value;
+  setState({
+    ...state,
+    [evt.target.name]: value
+  });
 }
 
 const handleSubmit = (evt) => {
   evt.preventDefault()
-  createUserAppointment(state)
-  props.history.push('/profile')
+  props.handleSubmit(state)
 }
 
 const openModal = (evt) => {
@@ -50,6 +50,8 @@ const handleCalendar = (date) => {
     date
   });
 }
+
+
 
 
   const therapistInfo = async () => {
@@ -85,12 +87,12 @@ const handleCalendar = (date) => {
 
       </section>
         <AppointmentForm
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-        date={state.date}
-        time={state.time}
-        handleCalendar={handleCalendar}
-        modalAppointment={open}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          date={state.date}
+          time={state.time}
+          handleCalendar={handleCalendar}
+          modalAppointment={open}
         />
       <section className='therapist-info'>
 
@@ -101,5 +103,6 @@ const handleCalendar = (date) => {
       </section>
     </section>
   )
+
 }
 export default withRouter(TherapistProfile);
